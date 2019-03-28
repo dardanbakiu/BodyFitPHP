@@ -1,0 +1,356 @@
+*{
+  /* outline: 1px solid red;    */
+
+
+}
+html{
+position:relative; 
+min-height: 100%;
+}
+body{    
+padding:0;
+margin:0;
+background-color:#ffff;
+}
+.mbeshtjellesi{
+padding-top: 10%;
+/* e kom ndryshu margin */
+margin-bottom: 12%;
+}
+.permbajtja{
+width:90%;
+margin:auto;
+overflow:hidden;
+}
+header{
+min-height: 70px;                       
+width: 100%;                            
+position: fixed;
+background: white;
+z-index: 99;
+}
+header img{
+float: left;
+}
+#vija {
+height: 3px;   
+background-color: rgba(29, 106, 119, 0.938);
+border: 0px;  
+padding: 0;
+margin-top: 0;
+}
+.searchbox{   
+max-width:400px; 
+float:right;    
+}
+form.searchbox input[type=text] {
+margin-top: 15px;
+padding: 8px;
+font-size: 17px;
+border: 1px solid rgba(29, 106, 119, 0.938);
+float: left;
+width: 64%;
+background: #ffffff;
+}
+form.searchbox input[type=submit] {
+margin-top: 15px;
+float: left;
+width: 28%;
+padding: 8px;
+background: rgba(29, 106, 119, 0.938);
+color: white;
+font-size: 17px;
+border: 1px solid rgba(29, 106, 119, 0.938);
+border-right: none;
+border-left: none;
+cursor: pointer;
+}
+form.searchbox input[type=submit]:hover{  
+  background-color: black;
+}
+form.searchbox::after {
+content: "";
+clear: both;
+display: table;   
+}
+ul{
+list-style-type: none;
+margin: 0;
+padding: 0;
+overflow: hidden;
+}
+nav ul {                 
+background-color:rgba(29, 106, 119, 0.938);
+}
+
+nav ul  li {
+padding: 0;
+float: left;
+width: 16%;
+}
+nav ul li a {
+display: block;
+color: rgb(255, 255, 255);
+text-align: center;
+font-size: 17px;
+padding: 12px;
+text-decoration: none;
+}
+
+nav ul li a:hover:not(.active) {
+  background-color: #00000098;
+
+}
+nav ul .active{
+background-color:black;
+}
+#fotot{  
+font-family: Arial, Helvetica, sans-serif;
+font-size: 15px;
+margin-top:20px;
+text-align: left;  
+}
+h3{
+font-family: Arial, Helvetica, sans-serif;
+font-size: 18px;
+}
+#fotot #f1{
+display: inline-block;
+width: 21%;
+height:auto;
+float: left;
+}
+#fotot #f2{
+display: inline-block;
+width: 21%;
+height:auto;
+margin-left: 5.4%;
+}
+#fotot #f3{
+display: inline-block;
+width: 21%;
+height:auto;
+float: left;
+margin-left: 5.4%;
+}
+#fotot #f4{
+display: inline-block;
+width: 21%;
+height:auto;
+float: right;    
+}
+.more,.more2,.more3,.more4, #moreinfo{
+display: none;
+}
+.moreless-button,.moreless-button2,
+.moreless-button3,.moreless-button4,
+.morelessinfo-button{
+text-decoration: none;
+color: rgba(29, 106, 119, 0.938);
+}
+#vijames{
+height: 1px;
+background-color: lightgray;
+width: 90%;
+border: 0;
+}
+footer{      
+position: absolute; 
+bottom: 0;
+left: 0%;
+right: 0%; 
+font-size: 14px;
+text-align: center;
+background-color:  #212121;
+height: auto;
+letter-spacing: 0.8px;
+}
+#footerimajtas{
+font-family: Tahoma;
+color: white;
+width: 30%;
+float: left;
+display: inline-block;
+padding: 2px 0px;
+}
+#footerimes{
+font-family: Tahoma;
+color: white;
+width: 30%;
+float: left;
+margin-left: 5%;
+display: inline-block;
+padding: 2px 0px;
+}
+
+#footeridjathtas{
+font-family: Tahoma;
+color: white;
+width: 30%;
+float: right;
+display: inline-block;
+padding: 2px 0px;
+}
+#footeridjathtas ul{
+margin-right: 30%;
+}
+#footeridjathtas ul li{
+list-style: none;
+padding-right: 4%;
+float: right;
+
+
+}
+#footeridjathtas ul li a{
+display: block;
+color: white;
+width: 40px;
+height: 40px;
+
+}
+#footeridjathtas ul li a:hover:not(.active){
+color:rgba(29, 106, 119, 0.938);
+}
+#copyright{
+width: 100%;
+display: inline;
+background-color:  #2b2a29;
+font-family: Tahoma;
+text-align: center;
+color: black;
+float: left;
+bottom: 0;
+border: none;
+height: 20px;
+padding: 0;
+font-size: 14px;
+}
+#copyright a{
+text-decoration: none;
+color: white;
+font-size: 14px;
+padding-left: 2%;
+}
+#copyright a:hover{
+color: black;
+}
+
+#aside1{
+display: inline-block;
+width: 31%;
+text-align: left;
+float: left;
+}
+#aside1 div{
+min-height: 130px; 
+}
+#aside1 a{
+  text-decoration: none;
+  color: rgba(29, 106, 119, 0.938)
+  }
+.vijashkurt{
+height: 1px;
+background-color:lightgray;
+border: 0;
+}
+#bottomsection{
+font-family: Arial, Helvetica, sans-serif;
+font-size: 15px;
+margin-top:10px;
+text-align: left;  
+
+
+}
+#middlevideo{
+display: inline-block;
+width: 31%;
+float: left;
+margin-left: 3.5%;
+height: auto;
+
+}
+#aside2{
+display: inline-block;
+width: 31%;
+text-align: left;
+float: right;
+}
+.right{
+min-height: 132px;
+}
+.right p{
+display: inline;
+}
+#aside2 a{
+text-decoration: none;
+color: rgba(29, 106, 119, 0.938)
+}
+
+
+
+/* MADHESIA PER TABLET */
+@media(max-width: 768px){
+.permbajtja{
+margin-bottom: 35px;
+} 
+.mbeshtjellesi{
+margin-bottom:65%;
+}
+header nav,
+header nav li,
+#vija,    
+#fotot #f1,#fotot #f2,
+#fotot #f3,#fotot #f4,
+#aside1, #middlevideo,
+#aside2, #footerimajtas,
+#footerimes, #footeridjathtas
+{
+float:none;
+text-align:center;
+width:100%;
+}
+header img{       
+margin: 0 60px 0 60px;
+}
+.searchbox {
+position: relative;    
+padding-right: 8%;     
+}   
+form.searchbox input[type=text],
+form.searchbox input[type=submit] {
+margin-top: 10px;
+padding: 4px;
+}
+header nav li a
+{
+padding: 1%;
+}
+#fotot{
+word-wrap: center;
+padding: 0px 60px 0 60px;
+}
+#fotot #f1{
+margin-bottom: 10px;
+}
+#fotot #f2{
+margin-bottom: 10px;
+}
+#fotot #f3{
+margin-bottom: 10px;
+}
+#fotot #f4{
+margin-bottom: 10px;
+}
+#footerimes{
+margin-left: 0;
+}
+#copyright{
+height: auto;
+}
+#footerimajtas,
+#footerimes, #footeridjathtas, #copyright,
+#copyright a{
+padding:0 ;
+font-size: 12px;
+}
+}

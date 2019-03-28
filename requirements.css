@@ -1,0 +1,14 @@
+#butoni{
+	border: 2px solid #82E0AA;
+	border-radius: 5%;
+	margin:10px;
+	padding: 10px;
+	background-color: #82E0AA;
+	color: #0A4B26;
+	font-family: helvetica;
+}
+
+#result{
+	font-family: helvetica;
+	color: #82E0AA;
+}

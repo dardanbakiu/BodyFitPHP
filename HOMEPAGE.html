@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="slideshow.css">
+    
+    <link rel="shortcut icon" href="icon.png"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" 
+     integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+     crossorigin="anonymous">
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+       <script src="gameScript.js"></script>
+     <title>Home</title>   
+</head>
+<body >
+    <header>
+        <hr id="vija">
+        <div class="permbajtja">
+          <img src="logo1.png" alt="Logoja" style="width:200px;height:70px; "> 
+            <form class="searchbox">
+                 <input type="text" placeholder="Search.." name="search">
+                 <input type="submit"name="submit" class="searchbox" value="Search">
+            </form>
+        </div>   
+        <nav>
+                <ul>
+                        <div class="permbajtja">
+                        <li class="active"><a href="#home">HOMEPAGE</a></li>
+                        <li><a href="aboutus.html">ABOUT US</a></li>
+                        <li><a href="OnlineTraining.html">ONLINE TRAINING</a></li> 
+                        <li><a href="team.html">TEAM</a></li>
+                        <li><a href="SIGN-UP.html" >SIGN UP | LOG IN</a></li>                        
+                        </div>
+                        
+                        
+                </ul>   
+        </nav>
+    </header>
+    <div class="mbeshtjellesi">
+        <div class="permbajtja">
+                <div class="galleryContainer">
+                        <div class="slideShowContainer">      
+                            <div class="captionTextHolder">
+                                    <div onclick="plusSlides(-1)" class="nextPrevBtn leftArrow"><span class="arrow arrowLeft"></span></div>
+                                    <div id="dotsContainer"></div><p class="captionText slideTextFromTop"></p></div>
+                                    <div onclick="plusSlides(1)" class="nextPrevBtn rightArrow"><span class="arrow arrowRight"></span></div>
+                            <div class="imageHolder">
+                                
+                                <img src="s1.jpg">
+                                <p class="captionText">Playing tennis is a good sport to maintain your health, fitness, strength and agility. It has been calculated that an hour-long game of singles tennis burns around 600 calories for men and 420 calories for women.</p>
+                            </div>
+                            <div class="imageHolder">
+                                <img src="s2.jpeg">
+                                <p class="captionText">The very art of balancing and engaging the core and key muscle groups during skiing and snowboarding makes the body more flexible. It also helps to reduce muscle strains and sprains.</p>
+                            </div>
+                            <div class="imageHolder">
+                                <img src="s3.jpg">
+                                <p class="captionText">Swimming is a great recreational activity for people of all ages. Recreational swimming can provide you with a low-impact workout and it’s also a good way to relax and feel good. Common swimming styles in recreational swimming are breaststroke, backstroke, side stroke and freestyle.</p>
+                            </div>
+                            <div class="imageHolder">
+                                <img src="s4.jpg">
+                                <p class="captionText">Cycling is mainly an aerobic activity, which means that your heart, blood vessels and lungs all get a workout. You will breathe deeper, perspire and experience increased body temperature, which will improve your overall fitness level. </p>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <script src="slideshow.js"></script>
+        </div>
+    <section id="fotot">
+        <div class="permbajtja">
+                <div id="f1">
+                        <img src="1.jpg" alt="Jump Rope" style="width:255px; height: 180px;">
+                        <h3>Jump Rope </h3>
+                        <p>Why jump rope?<br>
+                            It's a self-limiting tool.
+                            That means it enforces good
+                            form. Most training injuries 
+                            come about from doing exercises                       
+                            with poor form.</p>                       
+                            <p class="more">With the jump rope, poor form 
+                            gets punished with a (slight) 
+                            whip across the shins. 
+                            The rope won't let you use                        
+                            poor form. And that's great 
+                            for injury prevention. </p>
+                            <a class="moreless-button" href="javascript:function f(e){e.preventDefault();}">Read more &raquo;</a>
+                            <script>
+                                    $('.moreless-button').click(function() {
+                                    $('.more').slideToggle();
+                                    if ($('.moreless-button').text() == "Read more \u00bb") {
+                                     $(this).text("Read less \u00ab")
+                                     } else {
+                                     $(this).text("Read more \u00bb")
+                                     }
+                                     });
+                                </script>      
+                </div>
+                <div id="f2">
+                        <img src="7copy2.jpg" alt="Rope jumping" style="width:255px; height: 180px;">                    
+                        <h3>Push-up row with core hold</h3>
+                        <p>
+                            Classic exercises such as pushups, pull-ups, rows and squats are the cornerstone of any good workout, but busy lifestyles  can cause you to miss out a body part or certain exercise.
+                        </p>
+                        <p class="more2">
+                            Combine some of these popular exercises into one combination move and save your time!
+                            <br> <b>How to perform:</b><br>
+                        
+                            1. Place a pair of dumbbells, 
+                            slightly wider than 
+                            shoulder width apart.<br>
+                            2. Set yourself in a pushup 
+                            position with hands 
+                            on dumbbells.<br>                
+                            3. Lower your body to the
+                            floor, pause, then 
+                            complete 1 push up. <br>
+                            4. Once you're back in 
+                            the starting position, 
+                            row the dumbbell on 
+                            one side to the side 
+                            of your chest by 
+                            pulling the dumbbell 
+                            upwards. <br>
+                            5. Pause, then lower 
+                            the dumbbell back down, 
+                            and repeat the same 
+                            movement with your 
+                            other arm. <br>
+                            6. That is the completion 
+                            of 1 rep. <br>                 
+                       
+                        Perform 3 sets X 10 reps.              
+                        </p>                           
+                        <!-- <a class="moreless-button2" href="#">Read more > </a> -->
+                        <a class="moreless-button2" href="javascript:function f(e){e.preventDefault();}">Read more &raquo;</a>
+                            <!-- <script>
+                                    $('.moreless-button2').click(function() {
+                                    $('.more2').slideToggle();
+                                    if ($('.moreless-button2').text() == "Read more >") {
+                                     $(this).text("Read less <")
+                                     } else {
+                                     $(this).text("Read more >")
+                                     }
+                                     });
+                                </script>    -->
+                                <script>
+
+                                    $('.moreless-button2').click(function() {
+                                    $('.more2').slideToggle();
+                                    if ($('.moreless-button2').text() == "Read more \u00bb") {
+                                     $(this).text("Read less \u00ab")
+                                     } else {
+                                     $(this).text("Read more \u00bb")
+                                     }
+                                     });
+                                     
+                                </script>    
+                </div>
+                 <div id="f3">
+                        <img src="3copy.jpg" alt="Rope jumping" style="width:255px; height: 180px;">
+                        <h3>Treadmill Running </h3>
+                        <p>It's a great alternative 
+                           for runners when unfavorable
+                           weather or safety issues make 
+                           it impossible to run outside.
+                           Treadmills offer more 
+                           convenience than running 
+                           outside.</p>
+                           <p class="more3">
+                           Running indoors on a treadmill 
+                           means you don't have to deal 
+                           with potential hazards of 
+                           running outside, such as 
+                           <b>falls</b>,<b>cars</b>, <b>cyclists</b>, 
+                           <b>dogs</b>, and <b>other attackers</b>.
+                           You can run inside 
+                           when it's late at night 
+                           or pouring rain. 
+                        </p>
+                        <a class="moreless-button3" href="javascript:function f(e){e.preventDefault();}">Read more &raquo;</a>
+                        <script>
+                                $('.moreless-button3').click(function() {
+                                $('.more3').slideToggle();
+                                if ($('.moreless-button3').text() == "Read more \u00bb") {
+                                 $(this).text("Read less \u00ab")
+                                 } else {
+                                 $(this).text("Read more \u00bb")
+                                 }
+                                 });
+                            </script>  
+                        
+                </div>
+                <div id="f4">
+                        <img src="6.jpg" alt="Rope jumping" style="width:255px; height: 180px;">
+                        <h3>Hydration </h3>
+                        <p>In order to perform 
+                            your best on and off 
+                            the field, your body
+                            needs to stay hydrated.
+                            <br>     
+                            When you skimp on fluids, you might feel tired.</p> 
+                        <p class="more4">                  
+                            The average person 
+                            should be consuming 
+                            around 2.5 litres (approx 
+                            85 fl oz) for men and 
+                            2 litres (approx 68 fl oz) 
+                            for women per day, 70-80% 
+                            of which should be sourced from 
+                            water and the remaining from food. 
+                        </p>
+                        <a class="moreless-button4" href="javascript:function f(e){e.preventDefault();}">Read more &raquo;</a>
+                        <script>
+                                $('.moreless-button4').click(function() {
+                                $('.more4').slideToggle();
+                                if ($('.moreless-button4').text() == "Read more \u00bb") {
+                                 $(this).text("Read less \u00ab")
+                                 } else {
+                                 $(this).text("Read more \u00bb")
+                                 }
+                                 });
+                            </script>  
+                </div>
+        </div>
+    </section>
+    <hr id="vijames"> 
+    <section id="bottomsection">
+        <div class="permbajtja">
+            <aside id="aside1">
+                <h3 >Latest News & Events</h3>
+                <div>
+                    <h4> <a href="https://www.usnews.com/news/health-news/articles/2019-01-02/children-by-10-have-eaten-18-years-worth-of-sugar" target="_blank" >Health News</a></h4>
+                    <p>Monday 12 November</p>
+                   <p>BY 10 YEARS OLD, children have already exceeded the maximum recommended amount of sugar for an 18-year-old.Children consume about 52 grams of added sugar per day. </p>
+                </div>
+                <hr class="vijashkurt">
+                <div>
+                   <h4> <a href="https://www.usnews.com/news/health-news/articles/2018-12-26/flexibility-a-must-at-every-age" target="_blank" >Flexibility:A Must at Every Age </a></h4>
+                   <p >Wednesday 14th November</p>
+                    <p>Flexibility is a component of all types of movement:from everyday activities to the most rigorous exercises. Being flexible helps you stay mobile and avoid injury. </p>
+                </div>
+                <hr class="vijashkurt">
+                <div>
+                    <h4> <a href="https://mashable.com/2015/08/11/inspiring-global-fitness-events/#LB2iOtY_vsqI"
+                        target="_blank">Get fit,Have fun</a> </h4>
+                    <p >Friday 21st December</p>
+                    <p>Wanderlust Festival:There's something for almost everyone interested in a healthy, active lifestyle: Meditation, yoga, music, artists and chef — the list goes on. </p>
+                </div>
+            </aside>
+            <div id="middlevideo">
+                <h3>Take the virtual tour</h3>
+                <video width="360px;" height="200px" controls>
+                    <source src="middlevideo.mp4" type="video/mp4">
+                </video>
+                
+                <p> We keep our focus on the individual attention to a few clients interested in a balanced, healthy lifestyle, not thousands of members.The club comes complete with top of the line equipment, including cardio machines, free-weights, solectorized weight machines, balance and stretching equipment, a yoga and martial arts studio, a massage studio and flat screen Tvs on the channels of your choice. Upstairs a full line of LifeFitness and Precor cardio machines, free-weights, balance equipment, and solectorized weight equipment ensures that you never wait to use a machine.</p>
+        
+                <p id="moreinfo">
+                    Refined and updated to offer a setting that is open and light where both staff and clientele are friendly and casual and the focus is on well-balanced health.
+                </p>
+                <a class="morelessinfo-button" href="javascript:function f(e){e.preventDefault();}">Read more &raquo;</a>
+                <script>
+                        $('.morelessinfo-button').click(function() {
+                        $('#moreinfo').slideToggle();
+                        
+                        if ($('.morelessinfo-button').text() == "Read more \u00bb") {
+                         $(this).text("Read less \u00ab")
+                         } else {
+                         $(this).text("Read more \u00bb")
+                         }
+                         });
+                    </script>                 
+            </div>
+            <aside id="aside2">
+                <h3>Meet The Instructors</h3>
+                <div class="right">
+                    <img src="trainer1.jpg" style="width:80px;height:80px;border:1px solid lightgray; padding:2px;float: left;
+                    margin-right: 5px;"> 
+                    <p>Bob Harper <br> <br> Fitness Instructor      
+                    </p>
+                    <br> <br>
+                    <a href="team.html#trainer1">View Our Team &raquo;</a>
+                </div>
+                <hr class="vijashkurt">
+                <div class="right">
+                    <img src="ftrainer1.jpg" style="width:80px;height:80px;border:1px solid lightgray; padding:2px;float: left;
+                    margin-right: 5px;"> 
+                    <p>Anna Smith <br> <br> Yoga Teacher    
+                    </p>
+                    <br>
+                    <br>
+                   <a href="team.html#trainer2">View Our Team &raquo;</a>
+                </div>
+                <hr class="vijashkurt">
+                <div class="right">
+                    <img src="trainer2.jpg" style="width:80px;height:80px;border:1px solid lightgray; padding:2px;float: left;
+                    margin-right: 5px;"> 
+                    <p>Tony Horton <br> <br> Fitness Instructor      
+                    </p>
+                    <br>   
+                    <br>               
+                    <a href="team.html#trainer3">View Our Team &raquo;</a>
+                </div>
+            </aside>        
+        </div>
+    </section>
+    
+</div>
+    <footer>
+        <section id="footerimajtas">
+            <h4>Address</h4>
+            <p>"15280 S Keeler St". <br> Olathe, KS 66062</p>
+
+        </section>
+        <article id="footerimes">
+            <h4>Contact</h4>
+            <p>Number: +38349494949</p>
+            <p> Email:2018bodyfit@gmail.com</p>
+
+        </article>
+        <section id="footeridjathtas">
+            <h4>Social</h4>
+            <ul>
+                    <li><a href="https://www.facebook.com" target="blank"><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a href="https://www.instagram.com" target="blank"><i class="fab fa-instagram"></i></a></li>
+                    <li><a href="https://twitter.com" target="blank"><i class="fab fa-twitter"></i></a></li>
+                    
+            </ul>
+        </section>
+         <section id="copyright">
+            Copyright©2018,BodyFit,Inc.Online and Face to Face training,Inc. <a href="privacypolicy.html"> Privacy Policy</a><a onclick="openWin()"href="#">Play a game</a>
+         </section> 
+    </footer>
+    
+</body>
+</html>

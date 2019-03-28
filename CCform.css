@@ -1,0 +1,81 @@
+.CCform {
+    max-width: 700px;
+    background-color: #fff;
+    margin: 100px auto;
+    overflow: hidden;
+    padding: 25px;
+    color: #4c4e56;
+
+}
+.CCform label {
+    width: 100%;
+    margin-bottom: 10px;
+}
+.CCform .header h1 {
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    color: #4c4e56;
+}
+.CCform .pagesa {
+    float: left;
+    font-size: 18px;
+    padding: 10px 25px;
+    margin-top: 20px;
+    position: relative;
+}
+.CCform .pagesa .form-group {
+    float: left;
+    margin-bottom: 15px;
+}
+.CCform .pagesa .form-control {
+    line-height: 40px;
+    height: auto;
+    padding: 0 16px;
+}
+.CCform .pagesa .pronari {
+    width: 63%;
+    margin-right: 10px;
+}
+.CCform .pagesa .CVV {
+    width: 35%;
+}
+.CCform #card-number-field {
+    width: 100%;
+}
+.CCform #data_skadimit{
+    width: 50%;
+}
+.CCform #credit_cards {
+    width: 50%;
+    margin-top: 25px;
+    text-align: right;
+}
+.CCform #pay-now {
+    width: 100%;
+    margin-top: 25px;
+}
+.CCform .pagesa .btn {
+    width:100%;
+    margin-top: 3px;
+    font-size: 24px;
+    background-color: #2c3e50;
+    color: #fff;
+}
+.CCform .pagesa select {
+    padding: 10px;
+    margin-right: 15px;
+}
+.transparent {
+    opacity: 0.2;
+}
+@media(max-width: 800px){
+    .CCform .pronari,
+    .CCform .CVV,
+    .CCform #data_skadimit,
+    .CCform #credit_cards {
+        width: 100%;
+    }
+    .CCform #credit_cards {
+        text-align: left;
+    }
+}

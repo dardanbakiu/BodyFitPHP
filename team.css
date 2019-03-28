@@ -1,0 +1,178 @@
+
+
+
+.mbeshtjellesi{
+	padding-top: 70px;
+}
+#top-photo{
+	background-position: center;
+}
+
+#tabela1{
+	padding: 30px;
+	margin: 0 100px;
+}
+table{
+	width:90%; 
+	margin-left:5%;
+	margin-right:5%; 
+}
+table,th,td{
+	border:1px solid  #46bdd2;/*rgba(29, 106, 119, 0.938)*/;
+	color: #195b67;
+	text-align: center;
+	border-collapse: collapse;
+	font-family: arial;
+	padding: 4px 50px;
+}
+
+#first-row{
+	background-color: #C2ECF3;
+	color: #fff;
+}
+
+#second-row{
+	background-color: #d6f0f5;
+	color: #fff;
+}
+
+/*tr:nth-child(even) {
+  background-color: #C8E0F1;
+}
+
+tr:nth-child(odd) {
+  background-color: #E0EDF7;
+}
+*/
+
+
+tr:hover{
+	background-color: #EAF3F5;
+	font-style: bold;
+	/*color: #2892a4;*/
+}
+
+#trainers1{
+	width: 80%;
+	margin-left: 10%;
+	margin-right: 10%;
+}
+
+.team-list{
+
+}
+
+.team-list li{
+	float:left;
+}
+
+.trainers{
+	border:1px solid #fff;
+	padding:5px;
+	padding-top: 0;
+	margin:30px;
+}
+.card{
+	width: 270px;
+	height: 403px;
+}
+.para, .mbrapa{
+	width: 270px;
+	height: 403px;
+	/*overflow: hidden;*/
+	backface-visibility: hidden;
+	position:absolute;
+	transition: transform .6s linear;
+}
+.para{
+	transform: perspective(600px) rotateY(0deg);
+}
+.mbrapa{
+	padding: 0;
+	background: url('background-card.jpg');
+	transform: perspective(600px) rotateY(180deg);
+}
+.information{
+	color: #3b3b3b;
+	text-align: right;
+	padding: 30px 10px 30px 30px; 
+	font-family: arial;
+	font-size: 19px;
+}
+
+.card:hover > .para{
+	transform: perspective(600px) rotateY(-180deg);
+}
+.card:hover > .mbrapa{
+	transform: perspective(600px) rotateY(0deg);
+}	
+.telephone{
+	text-decoration: none;
+	border: 1px solid #009ACD;
+	padding: 8px;
+	margin:5px;
+	background-color: #fff;
+	color: #009ACD;
+}
+.telephone:hover{
+	border-radius: 10px;
+}
+.message{
+	text-decoration: none;
+	border: 1px solid #009ACD;
+	padding:8px;
+	margin: 5px;
+	background-color: #009ACD;
+	color: #fff;
+	font-family: helvetica;
+}
+
+.message:hover{
+	border-radius: 10px;
+}
+
+
+@media(max-width: 768px){
+ 
+.mbeshtjellesi{
+margin-bottom:65%;
+}
+header nav,
+header nav li {
+float:none;
+text-align:center;
+width:100%;
+}
+.searchbox {
+position: relative;    
+padding-right: 8%;     
+}   
+form.searchbox input[type=text],
+form.searchbox input[type=submit] {
+margin-top: 10px;
+padding: 4px;
+}
+header nav li a
+{
+padding: 1%;
+}
+
+
+
+
+
+
+
+#footerimes{
+margin-left: 0;
+}
+#copyright{
+height: auto;
+}
+#footerimajtas,
+#footerimes, #footeridjathtas, #copyright,
+#copyright a{
+padding:0 ;
+font-size: 12px;
+}
+}

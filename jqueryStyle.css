@@ -1,0 +1,15 @@
+#feeds{
+  width:auto;
+  margin-left:auto;
+  margin-right:auto;
+  margin-top:auto;
+  border-top:#333 dashed 1px;
+}
+.item{
+   margin:0;
+   width:80%;
+   height:20%;
+   font-size:160%;
+   border-bottom:#333 dashed 1px;
+   padding:0px 10px 0px 10px;
+}

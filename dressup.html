@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dress Up Game!</title>
+	<script type="text/javascript" src="loader.js"></script>
+      <link rel="stylesheet" type="text/css" href="loader.css">
+      <link rel="shortcut icon" href="icon.png"/>
+	<style type="text/css">
+		body{
+			background: #D8D8D8;
+		}
+		.lojaimg{
+			position: absolute;
+			width: 30%;
+			top: 100px;
+			left: 200px;
+		}
+		.btnLoja{
+			width: 100px;
+			height: 50px;
+		}
+
+
+		#shirt{
+		  	z-index: 0;
+		}
+
+		#pant{
+		  	z-index: -1;
+			}
+		#char{
+			z-index: -2;
+		}
+
+	</style>
+</head>
+<body >
+
+
+	
+	<button class="btnLoja" onclick="changetop()">TOP</button>
+	<button class="btnLoja" onclick="changepants()">BOTTOM</button>
+	<img class="lojaimg" src="character.png" id="char">
+	<img class="lojaimg" src="top1.png" id="top" >
+	<img class="lojaimg" src="pant1.png" id="pant">
+
+
+	<script type="text/javascript">
+		var n=1;
+		function changetop() {
+			if (n<7) {
+				n=n+1;
+			}
+			else{
+				n=1;
+			}
+			document.getElementById('top').src="top" +n+".png";
+		}
+		var m=1;
+		function changepants() {
+			if (m<7) {
+				m=m+1;
+			}
+			else{
+				m=1;
+			}
+			document.getElementById('pant').src="pant" +m+".png";
+		}
+
+
+	</script>
+	
+
+</body>
+</html>
