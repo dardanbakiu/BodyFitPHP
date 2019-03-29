@@ -20,7 +20,7 @@ $usernameRegister = $_POST['usernameRegister'];
 $emailRegister = $_POST['emailRegister'];
 $passwordRegister = $_POST['passwordRegister'];
 
-if (!empty($usernameRegister) || !empty($emailRegister) || !empty($passwordRegister1) || !empty($passwordRegister2) ) {
+if (!empty($usernameRegister) || !empty($emailRegister) || !empty($emailRegister) || !empty($passwordRegister) ) {
 
 	
 	 //Prepare statement
