@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-     <title>SignUp|LogIn</title>    
+     <title>SignUp|LogIn</title>
+     <!-- e re --> <script src="php.js"></script>
+
+
+
     <link rel="stylesheet" href="style.css">   
       <link rel="shortcut icon" href="icon.png"/>
     <link rel="stylesheet" href="signupstyle.css">
@@ -9,10 +13,12 @@
      integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
      crossorigin="anonymous">
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-     <script src="gameScript.js"></script>
+     <script src="gameScript.js"></script>  
     
 </head>
-<body>
+<body onload="hide()" >
+<!-- e re -->
+
     <header>
         <hr id="vija">
         <div class="permbajtja">
@@ -68,20 +74,68 @@
               
 
               <!--  -->
-                <form action="register.php" method="post" onsubmit="return validimi1()">                            
+                <form action=""   method="post" onsubmit="return validimi1()">                            
                 <div class="signup-block">                                        
                    <input type="text" value="" placeholder="Choose a Username" id="username" name="usernameRegister" required />
                    <input type="email" value="" placeholder="E-mail" id="email" name="emailRegister" required />
                    <input type="password" value="" placeholder="Password" id="password" name="passwordRegister" required />
-                   <input type="submit" value="Submit" class="submit" name="submitRegister">                                               
+                   <input type="submit" value="Submit" class="submit" name="submitRegister" onclick="show()">    
+                   <h2 id="register_alert" style="display: none;"></h2>                                           
                 </div>
            </form>
 
+           <?php
+// lidhja me db
+$host = "localhost";
+$dbusername = "root";
+$dbpassword = "";
+$dbname = "php";
+
+$conn = new mysqli($host, $dbusername, $dbpassword, $dbname);
+
+if(mysqli_connect_error()) {
+  echo "error";
+}
+
+else {
+
+
+// i kena rujt nvariabla inputat
+
+if (isset($_POST['usernameRegister']) && isset($_POST['emailRegister']) && isset($_POST['passwordRegister']))
+{
+
+$usernameRegister = ($_POST['usernameRegister']);
+$emailRegister = $_POST['emailRegister'];
+$passwordRegister = $_POST['passwordRegister'];
+
+
+  if (!empty($usernameRegister) || !empty($emailRegister) || !empty($emailRegister) || !empty($passwordRegister)) 
+    {  //Prepare statement
+         $stmt = $conn->prepare("insert into register values('".$usernameRegister."', '".$emailRegister."', '".$passwordRegister."');");
+         $stmt->execute();
+         $rnum = $stmt->num_rows;
+
+         echo 
+         "<script>
+            document.getElementById('register_alert').innerHTML = 'Jeni regjistruar me sukses!';
+            document.getElementById('register_alert').style.display = 'block';
+         </script>"; 
+    }
+
+  else  
+    {
+      echo "Te gjitha kolonat duhet te plotesohen";
+    }
+}
+}
+?>
+           
            <!--  -->
-           <form  action="#link" method="post" onsubmit="return validimi2()">
+           <form  action="login.php" method="post" onsubmit="return validimi2()">
                 <div class="login-block">                                       
                    <input type="text" value="" placeholder="Username" id="usernamee" name="usernameLogin" />
-                   <input type="password" value="" placeholder="Password" id="passwordd" name="passwordLogin" />
+                   <input type="text" value="" placeholder="Password" id="passwordd" name="passwordLogin" />
                    <input type="submit" value="Log In" class="loginn" name="submitLogint">                             
                    <span><a href="#">I forgot my username or password.</a></span>
                 </div>  
