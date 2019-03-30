@@ -142,39 +142,41 @@ $passwordRegister = $_POST['passwordRegister'];
                    <span><a href="#">I forgot my username or password.</a></span>
                 </div>  
             </form> 
-            <?php 
-            // lidhja me db
-            $host = "localhost";
-            $dbusername = "root";
-            $dbpassword = "";
-            $dbname = "php";
+             <?php 
+              // lidhja me db
+              $host = "localhost";
+              $dbusername = "root";
+              $dbpassword = "";
+              $dbname = "php";
 
-            $conn = new mysqli($host, $dbusername, $dbpassword, $dbname);
+              $conn = new mysqli($host, $dbusername, $dbpassword, $dbname);
 
-              $usernameLogin = $_POST['usernameLogin'];
-              $passwordLogin = $_POST['passwordLogin'];
+                if (isset($_POST['usernameLogin']) && isset($_POST['passwordLogin']) )
+                {
+                  $usernameLogin = $_POST['usernameLogin'];
+                  $passwordLogin = $_POST['passwordLogin'];
 
-            if  (!empty($usernameLogin) || !empty($passwordLogin)) 
-              {
-                  
-              // i kena rujt nvariabla inputat
-                
-
-                $selectUsername = $conn->query("select username from register where username ='".$usernameLogin."';");
-                $selectPassword = $conn->query("select password from register where password ='".$passwordLogin."';");
-
-
-              if  (( $selectUsername->num_rows > 0) &&( $selectPassword->num_rows > 0)) 
+                if  (!empty($usernameLogin) || !empty($passwordLogin)) 
                   {
-                    echo "jeni loguar";
-                  }
-              else 
-                  {
-                  echo "Na falni";
-                  }
-                }
-            ?>
                       
+                  // i kena rujt nvariabla inputat
+                    
+
+                    $selectUsername = $conn->query("select username from register where username ='".$usernameLogin."';");
+                    $selectPassword = $conn->query("select password from register where password ='".$passwordLogin."';");
+
+
+                  if  (( $selectUsername->num_rows > 0) &&( $selectPassword->num_rows > 0)) 
+                      {
+                        echo "jeni loguar";
+                      }
+                  else 
+                      {
+                      echo "Na falni";
+                      }
+                    }
+                }
+                ?>      
         </div>
   </div>       
    <script>
