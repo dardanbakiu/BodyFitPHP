@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -121,6 +122,7 @@ $passwordRegister = $_POST['passwordRegister'];
             document.getElementById('register_alert').innerHTML = 'Jeni regjistruar me sukses!';
             document.getElementById('register_alert').style.display = 'block';
          </script>"; 
+        
     }
 
   else  
@@ -132,14 +134,47 @@ $passwordRegister = $_POST['passwordRegister'];
 ?>
            
            <!--  -->
-           <form  action="login.php" method="post" onsubmit="return validimi2()">
+           <form  action="" method="post" onsubmit="return validimi2()">
                 <div class="login-block">                                       
                    <input type="text" value="" placeholder="Username" id="usernamee" name="usernameLogin" />
                    <input type="text" value="" placeholder="Password" id="passwordd" name="passwordLogin" />
                    <input type="submit" value="Log In" class="loginn" name="submitLogint">                             
                    <span><a href="#">I forgot my username or password.</a></span>
                 </div>  
-            </form>                                
+            </form> 
+            <?php 
+            // lidhja me db
+            $host = "localhost";
+            $dbusername = "root";
+            $dbpassword = "";
+            $dbname = "php";
+
+            $conn = new mysqli($host, $dbusername, $dbpassword, $dbname);
+
+              $usernameLogin = $_POST['usernameLogin'];
+              $passwordLogin = $_POST['passwordLogin'];
+
+            if  (!empty($usernameLogin) || !empty($passwordLogin)) 
+              {
+                  
+              // i kena rujt nvariabla inputat
+                
+
+                $selectUsername = $conn->query("select username from register where username ='".$usernameLogin."';");
+                $selectPassword = $conn->query("select password from register where password ='".$passwordLogin."';");
+
+
+              if  (( $selectUsername->num_rows > 0) &&( $selectPassword->num_rows > 0)) 
+                  {
+                    echo "jeni loguar";
+                  }
+              else 
+                  {
+                  echo "Na falni";
+                  }
+                }
+            ?>
+                      
         </div>
   </div>       
    <script>
