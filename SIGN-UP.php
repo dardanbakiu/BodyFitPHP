@@ -3,7 +3,6 @@
 <html>
 <head>
      <title>SignUp|LogIn</title>
-     <!-- e re --> <script src="php.js"></script>
 
 
 
@@ -17,7 +16,7 @@
      <script src="gameScript.js"></script>  
     
 </head>
-<body onload="hide()" >
+<body>
 <!-- e re -->
 
     <header>
@@ -38,7 +37,13 @@
                         <li><a href="aboutus.html">ABOUT US</a></li>
                         <li><a href="OnlineTraining.html">ONLINE TRAINING</a></li> 
                         <li><a href="team.html">TEAM</a></li>
-                        <li class="active"><a href="SIGN-UP.html" >SIGN UP | LOG IN</a></li>                        
+                        <?php
+                          if (!isset($_COOKIE['logged']))
+                          {
+                        
+                            echo '<li id="signUP" class="active"><a href="SIGN-UP.php" >SIGN UP | LOG IN</a></li>';
+                          }
+                        ?>                        
                         </div>
                         
                         
@@ -75,7 +80,7 @@
               
 
               <!--  -->
-                <form action=""   method="post" onsubmit="return validimi1()">                            
+                <form method="post" onsubmit="return validimi1()">                            
                 <div class="signup-block">                                        
                    <input type="text" value="" placeholder="Choose a Username" id="username" name="usernameRegister" required />
                    <input type="email" value="" placeholder="E-mail" id="email" name="emailRegister" required />
@@ -134,7 +139,7 @@ $passwordRegister = $_POST['passwordRegister'];
 ?>
            
            <!--  -->
-           <form  action="" method="post" onsubmit="return validimi2()">
+           <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" onsubmit="return validimi2()">
                 <div class="login-block">                                       
                    <input type="text" value="" placeholder="Username" id="usernamee" name="usernameLogin" />
                    <input type="text" value="" placeholder="Password" id="passwordd" name="passwordLogin" />
@@ -168,14 +173,15 @@ $passwordRegister = $_POST['passwordRegister'];
 
                   if  (( $selectUsername->num_rows > 0) &&( $selectPassword->num_rows > 0)) 
                       {
-                        echo "jeni loguar";
+                        if (!isset($_COOKIE["logged"]))
+                        {
+                          setcookie("logged", $usernameLogin, time() + (86400 * 30));
+                        }
+
+
                       }
-                  else 
-                      {
-                      echo "Na falni";
-                      }
-                    }
-                }
+                    
+                }}
                 ?>      
         </div>
   </div>       
