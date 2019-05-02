@@ -33,10 +33,10 @@
         <nav>
                 <ul>
                         <div class="permbajtja">
-                        <li ><a href="HOMEPAGE.html">HOMEPAGE</a></li>
-                        <li><a href="aboutus.html">ABOUT US</a></li>
-                        <li><a href="OnlineTraining.html">ONLINE TRAINING</a></li> 
-                        <li><a href="team.html">TEAM</a></li>
+                        <li ><a href="HOMEPAGE.php">HOMEPAGE</a></li>
+                        <li><a href="aboutus.php">ABOUT US</a></li>
+                        <li><a href="OnlineTraining.php">ONLINE TRAINING</a></li> 
+                        <li><a href="team.php">TEAM</a></li>
                         <?php
                           if (!isset($_COOKIE['logged']))
                           {
@@ -92,12 +92,7 @@
 
            <?php
 // lidhja me db
-$host = "localhost";
-$dbusername = "root";
-$dbpassword = "";
-$dbname = "php";
-
-$conn = new mysqli($host, $dbusername, $dbpassword, $dbname);
+include 'lidhjadb.php';
 
 if(mysqli_connect_error()) {
   echo "error";
@@ -148,13 +143,7 @@ $passwordRegister = $_POST['passwordRegister'];
                 </div>  
             </form> 
              <?php 
-              // lidhja me db
-              $host = "localhost";
-              $dbusername = "root";
-              $dbpassword = "";
-              $dbname = "php";
-
-              $conn = new mysqli($host, $dbusername, $dbpassword, $dbname);
+              include 'lidhjadb.php';
 
                 if (isset($_POST['usernameLogin']) && isset($_POST['passwordLogin']) )
                 {
@@ -180,9 +169,19 @@ $passwordRegister = $_POST['passwordRegister'];
 
 
                       }
+
+                  else 
+                  {
+                      echo 
+                       "<script>
+                          document.getElementById('register_alert').innerHTML = 'Keni shenuar te dhenat gabim';
+                          document.getElementById('register_alert').style.display = 'block';
+                       </script>"; 
+                  }
                     
                 }}
                 ?>      
+                  
         </div>
   </div>       
    <script>
