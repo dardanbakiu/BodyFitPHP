@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html manifest="aboutus.appcache">
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="jqueryStyle.css">
+
+  <link rel="stylesheet" type="text/css" href="content.css"> 
+   <link rel="shortcut icon" href="icon.png"/>
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" 
+     integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+     crossorigin="anonymous">
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+       <script src="gameScript.js"></script>
+       <style type="text/css">
+            #aboutBody {
+      display: flex;
+      justify-content: center;
+      font-family: 'Montserrat', sans-serif;
+      color: #F5FFFA;
+    }
+
+      #aboutBody h4 {
+        margin:auto;
+        color: black;
+        line-height: 100%;
+      
+      }
+      #aboutBody p {
+        margin:auto;
+        color: black;
+        line-height: 100%;
+      }
+       #aboutBody img {
+        margin:auto;
+        margin-left: 0;
+      }
+
+    img #imgabout{
+      position: fixed;
+      padding-top: 10%;
+    }
+
+    #imgDiv {
+      margin-top: -1%;
+    }
+
+    #aboutBody {
+      margin-top: 1.32%;
+      margin-left: 10%;
+      margin-right: 10%;
+
+    }
+   
+       </style>
+     <title>AboutUs</title>   
+</head>
+<body >
+    <header style="z-index: 1;">
+        <hr id="vija">
+        <div class="permbajtja">
+          <!-- <img src="logo1.png" alt="Logoja" style="width:220px;height:90px;margin-left: 4%">  -->
+          <img  src="logo1.png" alt="Logoja" style="width:200px;height:70px; "> 
+            <form class="searchbox">
+                 <input type="text" placeholder="Search.." name="search">
+                 <input type="submit"name="submit" class="searchbox" value="Search">
+            </form>
+        </div>   
+        <nav>
+                <ul>
+                        <div class="permbajtja">
+                        <li ><a href="HOMEPAGE.php">HOMEPAGE</a></li>
+                        <li><a href="aboutus.php">ABOUT US</a></li>
+                        <li><a href="OnlineTraining.php">ONLINE TRAINING</a></li> 
+                        <li><a href="team.php">TEAM</a></li>
+                        <?php
+                          if (!isset($_COOKIE['logged']))
+                          {
+                        
+                            echo '<li id="signUP" class="active"><a href="SIGN-UP.php" >SIGN UP | LOG IN</a></li>';
+                          }
+                          if (isset($_COOKIE['logged']))
+                          {
+                        
+                            echo '<li class="active"><a href="membersdb.php" >BODYFIT MEMBERS</a></li>';
+                          }
+                        ?>                        
+                        </div>
+                        
+                        
+                </ul>   
+        </nav>
+    </header>
+
+
+<!-- ktu me postu qka ki me dizajnu n'about-->
+<br><br><br><br><br><br><hr>
+<div id="imgDiv">
+<img id="imgabout" width="100%" src="aboutus.jpg" >
+</div>
+
+      <div id="aboutBody">
+        <div style="padding-right: 1%;">
+        <h4><abbr title="Title"> <mark>Who</mark> We Are. What We Do.</abbr></h4> <br>
+        <p>Page Fitness is for adults who have neglected their bodies and want to lose 10 to 50+ pounds, live healthier and get jealous compliments form their friends. We have been recognized Internationally as World Fitness Elite game changers and named Fitness Business of the Year for the United States and Canada for providing exceptional client results! Unlike gym memberships and other generic/fad programs that have failed you in the past, our results-based training focuses on your personal wants and needs, in a fun, social and family style atmosphere that you'll call home.</p>
+          <br><br>
+        <h4><abbr  title="Title">We Specialize In Getting People <mark>Fit</mark> &amp; <mark>Healthy</mark> </abbr></h4>
+        <br>
+        <p>We have the solution to make it happen for you! Our training facility is a place where people come to get fit, lose weight, learn to exercise right, learn to live better, eat healthier, supplement properly and just feel amazing! In fact, all this is part of every program. No fads. No gimmicks. Just real world in-the-trenches science!</p>
+
+      </div>
+        
+        <img src="aboutleft.jpg">
+      </div>
+      
+
+      <h5 id="h33" style="font-family: 'Montserrat', sans-serif; padding: 1%; background-color: #DEEBEE; margin-left:10%; margin-right: 10%; color:#19525F; ">
+          
+       <div id="feeds">
+          <div class="item" id="feed0" style="display: none;">We're Here to Help You Reach and Exceed Your Goals!</div>
+          <div class="item" id="feed1" style="display: none;">How do we do that? By providing you with solutions and comprehensive integrated programs. This means customized training, nutrition and meal planning, proper supplementation, and grocery shopping tours.</div>
+          <div class="item" id="feed2" style="display: none;">We build these into a plan-of-action that incorporates cardiovascular and resistance training, flexibility/mobility training, and professional coaching all wrapped up in one complete plan specifically designed for you!</div>
+          </div>
+    </h5>
+
+</div>
+
+
+<div class="content">
+    <div class="divcontents"><img  src="div1.jpg" width="100%"><div><p>We are NOT a gym. We do not sell gym memberships. We are not the "long slow death by treadmill" or "work mindlessly through a circuit of strength machines" style club. Why? It's a proven fact... that type of exercise works for less than 1% of the population.</p></div></div>
+
+    <div class="divcontents"><img  src="div3.jpg" width="100%"><div><p>More than 80% of our training clients say they've come to us after repeatedly failing to meet their goals at a traditional membership style gym.</p></div></div>
+
+    <div class="divcontents"><img  src="div4.jpg" width="100%"><div><p>We're not here to set you up to fail, we're here to help you succeed! Need to lose 20 pounds? 50 pounds? 100 pounds? Are you trying to get into the Special Forces? Maybe you just want to feel amazing and fit into that little black dress again.</p></div></div>
+  </div>
+
+
+
+    
+     <footer>
+        <section id="footerimajtas">
+            <h4>Address</h4>
+            <p>"15280 S Keeler St". <br> Olathe, KS 66062</p>
+
+        </section>
+        <article id="footerimes">
+            <h4>Contact</h4>
+            <p>Number: +38349494949</p>
+            <p> Email:2018bodyfit@gmail.com</p>
+
+        </article>
+        <section id="footeridjathtas">
+            <h4>Social</h4>
+            <ul>
+                    <li><a href="https://www.facebook.com" target="blank"><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a href="https://www.instagram.com" target="blank"><i class="fab fa-instagram"></i></a></li>
+                    <li><a href="https://twitter.com" target="blank"><i class="fab fa-twitter"></i></a></li>
+                    
+            </ul>
+        </section>
+         <section id="copyright">
+            Copyright©2018,BodyFit,Inc.Online and Face to Face training,Inc. <a href="privacypolicy.html"> Privacy Policy</a><a onclick="openWin()"href="#">Play a game</a>
+         </section>         
+    </footer>
+    
+    
+<script type="text/javascript">
+  var delay = 2000; // shpejtsia e ndrrimit  (animacionit)
+      var count = 5; // sa pjes mi ndrru (sa animacione mi ndrru)
+      var showing = 3; //sa "items" mi qit n'koh
+      var i = 0;
+      function move(i) {
+        return function() {
+          $('#feed'+i).remove().css('display', 'none').prependTo('#feeds');
+        }
+      }
+      function shift() {
+        var toShow = (i + showing) % count;
+        $('#feed'+toShow).slideDown(1000, move(i));
+        $('#feed'+i).slideUp(1000, move(i));
+        i = (i + 1) % count;
+        setTimeout('shift()', delay);
+      }    
+      $(document).ready(function() {
+        setTimeout('shift()', delay);
+      });
+</script>
+
+</body>
+</html>

@@ -34,17 +34,26 @@
             </form>
         </div>   
         <nav>
-                <ul>
-                        <div class="permbajtja">
-                        <li><a href="HOMEPAGE.html">HOMEPAGE</a></li>
-                        <li><a href="aboutus.html">ABOUT US</a></li>
-                        <li><a href="OnlineTraining.html">ONLINE TRAINING</a></li> 
-                        <li class="active"><a href="team.html">TEAM</a></li>
-                        <li><a href="SIGN-UP.html" >SIGN UP | LOG IN</a></li>                        
-                        </div>
-                        
-                        
-                </ul>   
+            <ul>
+                <div class="permbajtja">
+                    <li><a href="HOMEPAGE.php">HOMEPAGE</a></li>
+                    <li><a href="aboutus.php">ABOUT US</a></li>
+                    <li><a href="OnlineTraining.php">ONLINE TRAINING</a></li> 
+                    <li><a href="team.php">TEAM</a></li>
+                    <?php
+                      if (!isset($_COOKIE['logged']))
+                      {
+                    
+                        echo '<li id="signUP" class="active"><a href="SIGN-UP.php" >SIGN UP | LOG IN</a></li>';
+                      }
+                      if (isset($_COOKIE['logged']))
+                      {
+                    
+                        echo '<li class="active"><a href="membersdb.php">Profile</a></li>';
+                      }
+                    ?>                        
+                </div>  
+            </ul>   
         </nav>
     </header>
     <div class="mbeshtjellesi">
@@ -313,33 +322,43 @@
                 </li>
             </ul>
         </section>
-     <div id="join">
-       <center><form >
+     <div id="join" style="text-align: center;">
         <h3>Do you want to join our team?!</h3>
-        <label> Emri :</label> <input type="text" name="emri" style="margin: 1%"><br>
-        <label> Email :</label><input type="Email" name="email" style="margin:1%;"> <br>
-        <input style="width: 30%; padding-bottom:5%;" placeholder="Tregoni per veten tuaj" type="text" name="">
-       </form></center>
-
-    <?php
-    // KODI PER TEAM
-    $host = 'localhost';
-    $username = 'root';
-    $password = '';
-    $dbname = 'php';
-
-
-
-    ?>
-
-
-
-
-        </div>
-    
+        <label> Full Name :</label> <input type="text" id="emrii" style="margin: 1%"><br>
+        <label> Email :</label><input type="Email" id="email" style="margin:1%;"> <br>
+        <textarea style="width: 15%;" id="pershk" rows="3" placeholder="Tregoni per veten tuaj" type="text"></textarea></br>
+        <button id="click" style="width: 5%; height: 5vh; box-shadow: none; outline: none;">Submit</button>
+        <div id="response_text"></div>
+        <p id="regex"></p>
     </div>
 
-
+    <script>
+        $("#click").click(function ()
+        {
+            $.ajax(
+            {
+                type: "GET",
+                url: "paragrafi.php",
+                data: ({
+                    emri: document.getElementById("emrii").value,
+                    email: document.getElementById("email").value,
+                    pershkrimi: document.getElementById("pershk").value
+                }),
+                success: function(response)
+                {
+                    
+                    if (response == "1")
+                    {
+                        $("#response_text").text("Keni shtuar me sukses!");
+                    }
+                    else
+                    {
+                        $("#response_text").text("Keni shtuar pa sukses");
+                    }
+                }
+            });
+        });
+    </script>
 
      <footer>
         <section id="footerimajtas">

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+            <link rel="stylesheet" href="style.css">
+        <meta charset="utf-8">
+        <title>Online training Section </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="membership.css">
+        
+         <link rel="shortcut icon" href="icon.png"/>
+         
+       
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" 
+         integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+         crossorigin="anonymous">
+           <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+           <script src="gameScript.js"></script>
+    </head>
+    <body>
+        
+                <header>
+                        <hr id="vija">
+                        <div class="permbajtja">
+                          <img src="logo1.png" alt="Logoja" style="width:200px;height:70px; "> 
+                            <form class="searchbox">
+                                 <input type="text" placeholder="Search.." name="search">
+                                 <input type="submit"name="submit" class="searchbox" value="Search">
+                            </form>
+                        </div>   
+                        <nav>
+                                <ul>
+                                        <div class="permbajtja">
+                        <li ><a href="HOMEPAGE.php">HOMEPAGE</a></li>
+                        <li><a href="aboutus.php">ABOUT US</a></li>
+                        <li><a href="OnlineTraining.php">ONLINE TRAINING</a></li> 
+                        <li><a href="team.php">TEAM</a></li>
+                        <?php
+                          if (!isset($_COOKIE['logged']))
+                          {
+                        
+                            echo '<li id="signUP" class="active"><a href="SIGN-UP.php" >SIGN UP | LOG IN</a></li>';
+                          }
+                          if (isset($_COOKIE['logged']))
+                          {
+                        
+                            echo '<li class="active"><a href="membersdb.php" >BODYFIT MEMBERS</a></li>';
+                          }
+                        ?>                        
+                        </div>
+                                        
+                                        
+                                </ul>   
+                        </nav>
+
+        </header>
+        <div class="mbeshtjellesi">
+
+                <div class="permbajtja">
+        <div class="membership-pricing-table">
+            <div class="col">
+                <div class="table">
+                    <h2> Beginner </h2>
+                    <div class="price"> $100
+                        <span>Per year</span>
+                    </div>
+                        <ul>
+                            <li><strong>1 </strong>Personal Trainer</li>
+                            <li><strong>2 </strong>Gym Sessions a week</li>
+                            <li><strong>2 </strong>hours a session</li>
+                            <li><strong>5 </strong>Training methods</li>
+                        </ul>
+                        <a href="CCform.html" target="_blank">Buy Now</a>
+                </div>
+            </div>   
+            <div class="col">
+
+                <div class="table">
+                    <h2> Intermediate </h2>
+                    <div class="price"> $150
+                        <span>Per year</span>
+                    </div>
+                        <ul>
+                            <li><strong>1 </strong>Personal Trainer</li>
+                            <li><strong>3 </strong>Gym Sessions a week</li>
+                            <li><strong>2 </strong>hours a session</li>
+                            <li><strong>7 </strong>Training methods</li>
+                        </ul>
+                        <a href="CCform.html" target="_blank">Buy Now</a>
+                </div>
+            </div>   
+            <div class="col">
+                <div class="table">
+                    <h2> Experienced </h2>
+                    <div class="pop">Popular</div>
+                    <div class="price"> $200
+                        <span>Per year</span>
+                    </div>
+                        <ul>
+                            <li><strong>1 </strong>Personal Trainer</li>
+                            <li><strong>4 </strong>Gym Sessions a week</li>
+                            <li><strong>3 </strong>hours a session</li>
+                            <li><strong>10 </strong>Training methods</li>
+                        </ul>
+                        <a href="CCform.html" target="_blank">Buy Now</a>
+                </div>
+            </div>   
+            <div class="col">
+                <div class="table">
+                    <h2> Expert </h2>
+                    <div class="price"> $500
+                        <span>Per year</span>
+                    </div>
+                        <ul>
+                            <li><strong>2 </strong>Personal Trainers</li>
+                            <li><strong>7 </strong>Gym Sessions a week</li>
+                            <li><strong>3 </strong>hours a session</li>
+                            <li><strong>15 </strong>Training methods</li>
+                        </ul>
+                        <a href="CCform.html" target="_blank">Buy Now</a>
+                </div>
+            </div>   
+            
+        </div>
+    </div>
+</div>
+        <footer>
+                <section id="footerimajtas">
+                    <h4>Address</h4>
+                    <p>"15280 S Keeler St". <br> Olathe, KS 66062</p>
+        
+                </section>
+                <article id="footerimes">
+                    <h4>Contact</h4>
+                    <p>Number: +38349494949</p>
+                    <p> Email:2018bodyfit@gmail.com</p>
+        
+                </article>
+                <section id="footeridjathtas">
+                    <h4>Social</h4>
+                    <ul>
+                            <li><a href="https://www.facebook.com" target="blank"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a href="https://www.instagram.com" target="blank"><i class="fab fa-instagram"></i></a></li>
+                            <li><a href="https://twitter.com" target="blank"><i class="fab fa-twitter"></i></a></li>
+                            
+                    </ul>
+                </section>
+                 <section id="copyright">
+                    Copyright©2018,BodyFit,Inc.Online and Face to Face training,Inc. <a href="privacypolicy.html"> Privacy Policy</a><a onclick="openWin()"href="#">Play a game</a>
+                 </section> 
+            </footer>
+            
+
+    </body>
+</html>

@@ -43,6 +43,11 @@
                         
                             echo '<li id="signUP" class="active"><a href="SIGN-UP.php" >SIGN UP | LOG IN</a></li>';
                           }
+                          if (isset($_COOKIE['logged']))
+                          {
+                        
+                            echo '<li class="active"><a href="membersdb.php" >BODYFIT MEMBERS</a></li>';
+                          }
                         ?>                        
                         </div>
                         
@@ -74,22 +79,29 @@
 <div class="mbeshtjellesi">     
        
    <div class="permbajtja">
-        <div class="container">                                 
+        <div class="container" style="height: 500px;">                                 
                 <div class="signup">Sign Up</div>
                 <div class="login">Log In</div> 
               
 
               <!--  -->
-                <form method="post" onsubmit="return validimi1()">                            
+                <form method="post" onsubmit="return validimi1()">        
+
                 <div class="signup-block">                                        
                    <input type="text" value="" placeholder="Choose a Username" id="username" name="usernameRegister" required />
-                   <input type="email" value="" placeholder="E-mail" id="email" name="emailRegister" required />
+                   <input type="text" value="" placeholder="Name" name="register_name_input" required />
+                   <input type="text" value="" placeholder="Lastname" name="register_lastname_input" required />
+                   <input type="text" value="" placeholder="City" name="register_city_input" required />
+                   <input type="email" value="" placeholder="E-mail" name="emailRegister" required />
                    <input type="password" value="" placeholder="Password" id="password" name="passwordRegister" required />
                    <input type="submit" value="Submit" class="submit" name="submitRegister" onclick="show()">    
                    <h2 id="register_alert" style="display: none;"></h2>                                           
                 </div>
            </form>
 
+
+
+          
            <?php
 // lidhja me db
 include 'lidhjadb.php';
@@ -103,17 +115,20 @@ else {
 
 // i kena rujt nvariabla inputat
 
-if (isset($_POST['usernameRegister']) && isset($_POST['emailRegister']) && isset($_POST['passwordRegister']))
+if (isset($_POST['usernameRegister']) && isset($_POST['register_name_input']) && isset($_POST['register_lastname_input']) && isset($_POST['register_city_input']) && isset($_POST['emailRegister']) && isset($_POST['passwordRegister']))
 {
 
 $usernameRegister = ($_POST['usernameRegister']);
 $emailRegister = $_POST['emailRegister'];
 $passwordRegister = $_POST['passwordRegister'];
+$register_name_input = $_POST['register_name_input'];
+$register_lastname_input = $_POST['register_lastname_input'];
+$register_city_input = $_POST['register_city_input'];
 
 
-  if (!empty($usernameRegister) || !empty($emailRegister) || !empty($emailRegister) || !empty($passwordRegister)) 
+  if (!empty($usernameRegister) || !empty($emailRegister) || !empty($emailRegister) || !empty($passwordRegister)|| !empty($register_name_input)|| !empty($register_lastname_input)|| !empty($register_city_input)) 
     {  //Prepare statement
-         $stmt = $conn->prepare("insert into register values('".$usernameRegister."', '".$emailRegister."', '".$passwordRegister."');");
+         $stmt = $conn->prepare("insert into register(name,lastname,city,email,password,username) values('".$register_name_input."','".$register_lastname_input."', '".$register_city_input."', '".$emailRegister."','".$passwordRegister."','".$usernameRegister."');");
          $stmt->execute();
          $rnum = $stmt->num_rows;
 
@@ -141,7 +156,7 @@ $passwordRegister = $_POST['passwordRegister'];
                    <input type="submit" value="Log In" class="loginn" name="submitLogint">                             
                    <span><a href="#">I forgot my username or password.</a></span>
                 </div>  
-            </form> 
+            </form>
              <?php 
               include 'lidhjadb.php';
 
@@ -165,6 +180,14 @@ $passwordRegister = $_POST['passwordRegister'];
                         if (!isset($_COOKIE["logged"]))
                         {
                           setcookie("logged", $usernameLogin, time() + (86400 * 30));
+                          echo
+                           "
+
+                            <script>
+                             location.replace('http://localhost:1998/gitbodyfit/HOMEPAGE.php');
+                            
+                            </script>
+                          ";
                         }
 
 
