@@ -10,7 +10,9 @@
      crossorigin="anonymous">
        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
        <script src="gameScript.js"></script>
-     <title>Home</title>   
+       <link rel="stylesheet" type="text/css" href="vionda.css">
+     <title>Home</title>
+
 </head>
 <body >
     <header>
@@ -25,9 +27,16 @@
         <nav>
                 <ul>
                     <div class="permbajtja">
-                    <li ><a href="HOMEPAGE.php">HOMEPAGE</a></li>
+                    <li><a href="HOMEPAGE.php">HOMEPAGE</a></li>
                     <li><a href="aboutus.php">ABOUT US</a></li>
-                    <li><a href="OnlineTraining.php">ONLINE TRAINING</a></li> 
+                    <?php
+                    if (isset($_COOKIE['logged']))
+                      {
+                    
+                        echo '<li><a href="OnlineTraining.php">ONLINE TRAINING</a></li> ';
+                      }
+                    
+                    ?>
                     <li><a href="team.php">TEAM</a></li>
                     <?php
                       if (!isset($_COOKIE['logged']))
@@ -38,10 +47,10 @@
                       if (isset($_COOKIE['logged']))
                       {
                     
-                        echo '<li class="active"><a href="membersdb.php" >PROFILE</a></li>';
+                        echo '<li class="active"><a href="membersdb.php">PROFILE</a></li>';
                       }
                     ?>                        
-                    </div>
+                </div>
 
                 </ul>   
         </nav>
@@ -66,10 +75,11 @@
               $city = $row['city'];
 //qetu ki me ndreq me css mu dok mir
               echo "<p id='emriphp'> ".$name."</p>";
-              echo $lastname.'<br>';
-              echo $email.'<br>';
-              echo $username.'<br>';
-              echo $city.'<br>';
+              echo "<p id='mbiemriphp'> ".$lastname."</p>";
+              echo "<p id='emailphp'> ".$email."</p>";
+              echo "<p id='usernphp'> ".$username."</p>";
+              echo "<p id='cityphp'> ".$city."</p>";
+             
 
 
             ?>

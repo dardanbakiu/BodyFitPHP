@@ -25,23 +25,42 @@
         <nav>
                 <ul>
                         <div class="permbajtja">
-                        <li ><a href="HOMEPAGE.php">HOMEPAGE</a></li>
-                        <li><a href="aboutus.php">ABOUT US</a></li>
-                        <li><a href="OnlineTraining.php">ONLINE TRAINING</a></li> 
-                        <li><a href="team.php">TEAM</a></li>
-                        <?php
-                          if (!isset($_COOKIE['logged']))
-                          {
-                        
-                            echo '<li id="signUP" class="active"><a href="SIGN-UP.php" >SIGN UP | LOG IN</a></li>';
-                          }
-                          if (isset($_COOKIE['logged']))
-                          {
-                        
-                            echo '<li class="active"><a href="membersdb.php" >BODYFIT MEMBERS</a></li>';
-                          }
-                        ?>                        
-                        </div>
+                    <li><a href="HOMEPAGE.php">HOMEPAGE</a></li>
+                    <li><a href="aboutus.php">ABOUT US</a></li>
+                    <?php
+                    if (isset($_COOKIE['logged']))
+                      {
+                    
+                        echo '<li><a href="OnlineTraining.php">ONLINE TRAINING</a></li> ';
+                      }
+                    
+                    ?>
+                    <li><a href="team.php">TEAM</a></li>
+                    <?php
+                      if (!isset($_COOKIE['logged']))
+                      {
+                    
+                        echo '<li id="signUP" class="active"><a href="SIGN-UP.php" >SIGN UP | LOG IN</a></li>';
+                      }
+                      if (isset($_COOKIE['logged']))
+                      {
+                    
+                        echo '<li class="active"><a href="membersdb.php">PROFILE</a></li>';
+                      }
+                      if (isset($_COOKIE['logged']))
+                      {
+                    
+                        echo '<li" style="float:right;"><button id="logout"> logout </button></li>';
+                      }
+                    ?>                        
+                </div>
+                <script type="text/javascript">
+                           // <?php
+                           // $('#logout').click(function(){
+                                // setcookie("logged", $usernameLogin, time() - (86400 * 30));  
+                           //  });
+                        //?>
+                    </script>
                         
                         
                 </ul>   

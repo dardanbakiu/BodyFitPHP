@@ -38,7 +38,14 @@
                 <div class="permbajtja">
                     <li><a href="HOMEPAGE.php">HOMEPAGE</a></li>
                     <li><a href="aboutus.php">ABOUT US</a></li>
-                    <li><a href="OnlineTraining.php">ONLINE TRAINING</a></li> 
+                    <?php
+                    if (isset($_COOKIE['logged']))
+                      {
+                    
+                        echo '<li><a href="OnlineTraining.php">ONLINE TRAINING</a></li> ';
+                      }
+                    
+                    ?>
                     <li><a href="team.php">TEAM</a></li>
                     <?php
                       if (!isset($_COOKIE['logged']))
@@ -49,9 +56,11 @@
                       if (isset($_COOKIE['logged']))
                       {
                     
-                        echo '<li class="active"><a href="membersdb.php">Profile</a></li>';
+                        echo '<li class="active"><a href="membersdb.php">PROFILE</a></li>';
                       }
-                    ?>                        
+                    ?>   
+                    
+
                 </div>  
             </ul>   
         </nav>
