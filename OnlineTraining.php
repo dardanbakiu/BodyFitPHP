@@ -52,7 +52,14 @@
                     
                         echo '<li class="active"><a href="membersdb.php">PROFILE</a></li>';
                       }
-                    ?>                        
+                    ?> 
+
+
+
+
+                    
+
+
                 </div>
                                         
                                         
@@ -76,7 +83,7 @@
                             <li><strong>2 </strong>hours a session</li>
                             <li><strong>5 </strong>Training methods</li>
                         </ul>
-                        <a href="CCform.html" target="_blank">Buy Now</a>
+                        <a href="CCform.php" target="_blank">Buy Now</a>
                 </div>
             </div>   
             <div class="col">
@@ -92,7 +99,7 @@
                             <li><strong>2 </strong>hours a session</li>
                             <li><strong>7 </strong>Training methods</li>
                         </ul>
-                        <a href="CCform.html" target="_blank">Buy Now</a>
+                        <a href="CCform.php" target="_blank">Buy Now</a>
                 </div>
             </div>   
             <div class="col">
@@ -108,7 +115,7 @@
                             <li><strong>3 </strong>hours a session</li>
                             <li><strong>10 </strong>Training methods</li>
                         </ul>
-                        <a href="CCform.html" target="_blank">Buy Now</a>
+                        <a href="CCform.php" target="_blank">Buy Now</a>
                 </div>
             </div>   
             <div class="col">
@@ -123,7 +130,7 @@
                             <li><strong>3 </strong>hours a session</li>
                             <li><strong>15 </strong>Training methods</li>
                         </ul>
-                        <a href="CCform.html" target="_blank">Buy Now</a>
+                        <a href="CCform.php" target="_blank">Buy Now</a>
                 </div>
             </div>   
             

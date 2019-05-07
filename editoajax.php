@@ -5,6 +5,8 @@
 <?php 
 	include 'lidhjadb.php';
 
+	$username = $_COOKIE['logged'];
+
 	$emri = $_GET['emri'];
 	$lastname = $_GET['lastname'];
 	$city = $_GET['city'];
@@ -13,7 +15,7 @@
 
 	//ki me i shti ne databaz
 
-	$insert = $conn->query('update register set name = "'.$emri.'"     ');
+	$insert = $conn->query('update register set name = "'.$emri.'"  where username = "'.$username.'"  ');
 	$insert = $conn->query('update register set lastname = "'.$lastname.'"     ');
 	$insert = $conn->query('update register set city = "'.$city.'"     ');
 	$insert = $conn->query('update register set email = "'.$email.'"     ');
