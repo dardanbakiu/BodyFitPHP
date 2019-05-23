@@ -10,13 +10,17 @@
      crossorigin="anonymous">
        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
        <script src="gameScript.js"></script>
-       <link rel="stylesheet" type="text/css" href="vionda.css">
      <title>Home</title>
+     <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
 </head>
 <body >
     <header>
         <hr id="vija">
+        <div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.3"></script>
+
+<div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-width="" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="false"></div>
         <div class="permbajtja">
           <img src="logo1.png" alt="Logoja" style="width:200px;height:70px; "> 
             <form class="searchbox">
@@ -49,6 +53,19 @@
                     
                         echo '<li class="active"><a href="membersdb.php">PROFILE</a></li>';
                       }
+                      if (isset($_SESSION['paid']))
+                      {
+                    
+                        echo '<li class="active"><a href="membersdb.php">PROFILE</a></li>';
+                      }
+                    ?> 
+                    <?php
+                    if (isset($_COOKIE['logged']))
+                      {
+                    
+                        echo '<li style="background-color:MediumSeaGreen;"><a href="logout.php">LOGOUT</a></li> ';
+                      }
+                    
                     ?>                        
                 </div>
 
@@ -74,25 +91,33 @@
               $username = $row['username'];
               $city = $row['city'];
 //qetu ki me ndreq me css mu dok mir
-              echo "<p id='emriphp'> ".$name."</p>";
-              echo "<p id='mbiemriphp'> ".$lastname."</p>";
-              echo "<p id='emailphp'> ".$email."</p>";
-              echo "<p id='usernphp'> ".$username."</p>";
-              echo "<p id='cityphp'> ".$city."</p>";
-             
-
+              ?><div id="all">
+                <?php
+              
+              echo "<h1 style='text-align:center;' id='emriphp'> ".$name." ".$lastname."</h1>";
+              echo "<h2 style='text-align:center;' id='emailphp'>".$email."</h2>";
+              echo "<h3 style='text-align:center;' id='usernphp'> @".$username."</h3>";
+              echo "<h4 style='text-align:center;' id='cityphp'>  ".$city."</h4  >";
+             ?>
+             </div>
+             <?php
 
             ?>
 
-
-            <button id="change_data_btn">Change Your Informations</button>
+<br><br>
+           <p style="text-align: center;"> <button  id="change_data_btn" class="btn  btn-success">Ndrysho te dhenat</button> </p><br><br>
 
           <div class="ndrysho_te_dhenat" style="text-align: center; ">
-            <p>Name: <input id="name" type="text"/></p>
-            <p>Lastname: <input id="lastname" type="text"/></p>
-            <p>City: <input id="city" type="text"/></p>
-            <p>Email: <input id="email" type="text"/></p>
-            <p>Password: <input id="password" type="password"/></p>
+            <label>Emri: </label>
+            <p> <input id="name" type="text"/></p>
+            <label>Mbiemri: </label>
+            <p> <input id="lastname" type="text"/></p>
+            <label>Qyteti: </label>
+            <p><input id="city" type="text"/></p>
+            <label>Email: </label>
+            <p> <input id="email" type="text"/></p>
+            <label>Fjalekalimi</label>
+            <p> <input id="password" type="password"/></p>
             <p><input id="click" type="submit"/></p>
             <p id="response_text"></p>
 
@@ -108,7 +133,9 @@
             $(document).ready(function(){
               $('#change_data_btn').click(function(){
                 $('.ndrysho_te_dhenat').toggle();
-              })
+                $('#all').hide();
+                $('#change_data_btn').hide();
+              });
             });
 
 

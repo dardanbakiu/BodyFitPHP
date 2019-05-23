@@ -1,4 +1,62 @@
+<?php 
+                if (isset($_COOKIE['logged']))
+                {
+                  echo "";
+                }
 
+                else {
+                  echo "";
+                }
+                ?>
+            </form>
+             <?php 
+              include 'lidhjadb.php';
+
+                if (isset($_POST['usernameLogin']) && isset($_POST['passwordLogin']) )
+                {
+                  $usernameLogin = $_POST['usernameLogin'];
+                  $passwordLogin = $_POST['passwordLogin'];
+
+                if  (!empty($usernameLogin) || !empty($passwordLogin)) 
+                  {
+                      
+                  // i kena rujt nvariabla inputat
+                    
+
+                    $selectUsername = $conn->query("select username from register where username ='".$usernameLogin."';");
+                    $selectPassword = $conn->query("select password from register where password ='".$passwordLogin."';");
+
+
+                  if  (( $selectUsername->num_rows > 0) &&( $selectPassword->num_rows > 0)) 
+                      {
+                        echo "rreshti206";
+                        if (!isset($_COOKIE["logged"]))
+                        {
+                          setcookie("logged", $usernameLogin, time() + (86400 * 30));
+                            echo
+                            "
+
+                            <script>
+                              location.replace('http://localhost/ushtrime/bodyfitPHP/HOMEPAGE.php');
+                            
+                              </script>
+                            ";
+                        }
+
+
+                      }
+
+                  else 
+                  {
+                      echo 
+                       "<script>
+                          document.getElementById('register_alert').innerHTML = 'Keni shenuar te dhenat gabim';
+                          document.getElementById('register_alert').style.display = 'block';
+                       </script>"; 
+                  }
+                    
+                }}
+                ?>  
 <!DOCTYPE html>
 <html>
 <head>
@@ -55,7 +113,15 @@
                     
                         echo '<li class="active"><a href="membersdb.php">PROFILE</a></li>';
                       }
-                    ?>                        
+                    ?> 
+                     <?php
+                    if (isset($_COOKIE['logged']))
+                      {
+                    
+                        echo '<li style="background-color:MediumSeaGreen;"><a href="logout.php">LOGOUT</a></li> ';
+                      }
+                    
+                    ?>                          
                 </div>
                         
                         
@@ -102,8 +168,10 @@
                    <input type="email" value="" placeholder="E-mail" name="emailRegister" required />
                    <input type="password" value="" placeholder="Password" id="password" name="passwordRegister" required />
                    <input type="submit" value="Submit" class="submit" name="submitRegister" onclick="show()">    
-                   <h2 id="register_alert" style="display: none;"></h2>                                           
+                   <h2 id="register_alert" style="display: none;"></h2>      
+                                                       
                 </div>
+
            </form>
 
 
@@ -156,61 +224,14 @@ $register_city_input = $_POST['register_city_input'];
 ?>
            
            <!--  -->
-           <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" onsubmit="return validimi2()">
+           <form action="SIGN-UP.PHP" method="post" onsubmit="return validimi2()">
                 <div class="login-block">                                       
                    <input type="text" value="" placeholder="Username" id="usernamee" name="usernameLogin" />
                    <input type="text" value="" placeholder="Password" id="passwordd" name="passwordLogin" />
                    <input type="submit" value="Log In" class="loginn" name="submitLogint">                             
                    <span><a href="#">I forgot my username or password.</a></span>
                 </div>  
-            </form>
-             <?php 
-              include 'lidhjadb.php';
-
-                if (isset($_POST['usernameLogin']) && isset($_POST['passwordLogin']) )
-                {
-                  $usernameLogin = $_POST['usernameLogin'];
-                  $passwordLogin = $_POST['passwordLogin'];
-
-                if  (!empty($usernameLogin) || !empty($passwordLogin)) 
-                  {
-                      
-                  // i kena rujt nvariabla inputat
                     
-
-                    $selectUsername = $conn->query("select username from register where username ='".$usernameLogin."';");
-                    $selectPassword = $conn->query("select password from register where password ='".$passwordLogin."';");
-
-
-                  if  (( $selectUsername->num_rows > 0) &&( $selectPassword->num_rows > 0)) 
-                      {
-                        if (!isset($_COOKIE["logged"]))
-                        {
-                          setcookie("logged", $usernameLogin, time() + (86400 * 30));
-                          echo
-                           "
-
-                            <script>
-                             location.replace('http://localhost:1998/gitbodyfit/HOMEPAGE.php');
-                            
-                            </script>
-                          ";
-                        }
-
-
-                      }
-
-                  else 
-                  {
-                      echo 
-                       "<script>
-                          document.getElementById('register_alert').innerHTML = 'Keni shenuar te dhenat gabim';
-                          document.getElementById('register_alert').style.display = 'block';
-                       </script>"; 
-                  }
-                    
-                }}
-                ?>      
                   
         </div>
   </div>       

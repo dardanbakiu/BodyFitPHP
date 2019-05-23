@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html >
 <head>
@@ -14,7 +16,13 @@
 </head>
 <body >
     <header>
+        <div id="fb-root"></div>
+
         <hr id="vija">
+        <div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.3"></script>
+
+<div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-width="" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="false"></div>
         <div class="permbajtja">
           <img src="logo1.png" alt="Logoja" style="width:200px;height:70px; "> 
             <form class="searchbox">
@@ -47,20 +55,26 @@
                     
                         echo '<li class="active"><a href="membersdb.php">PROFILE</a></li>';
                       }
-                      if (isset($_COOKIE['logged']))
+                        
+                    ?>   
+                     <?php
+                    if (isset($_COOKIE['logged']))
                       {
                     
-                        echo '<li" style="float:right;"><button id="logout"> logout </button></li>';
+                        echo '<li style="background-color:MediumSeaGreen;"><a href="logout.php">LOGOUT</a></li> ';
                       }
-                    ?>                        
+                    
+                    ?>
+                    <?php
+                    if (isset($_SESSION["buy_session"]))
+                      {
+                    
+                        echo '<li style="background-color:MediumSeaGreen;"><a href="logout.php">LOGOUT</a></li> ';
+                      }
+                    
+                    ?>                     
                 </div>
-                <script type="text/javascript">
-                           // <?php
-                           // $('#logout').click(function(){
-                                // setcookie("logged", $usernameLogin, time() - (86400 * 30));  
-                           //  });
-                        //?>
-                    </script>
+               
                         
                         
                 </ul>   

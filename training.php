@@ -52,17 +52,17 @@
                     
                         echo '<li" style="float:right;"><button id="logout"> logout </button></li>';
                       }
+                    ?>   
+                     <?php
+                    if (isset($_COOKIE['logged']))
+                      {
+                    
+                        echo '<li style="background-color:MediumSeaGreen;"><a href="logout.php">LOGOUT</a></li> ';
+                      }
+                    
                     ?>                        
                 </div>
-                <script type="text/javascript">
-                           // <?php
-                           // $('#logout').click(function(){
-                                // setcookie("logged", $usernameLogin, time() - (86400 * 30));  
-                           //  });
-                        //?>
-                    </script>
-                        
-                        
+              
                 </ul>   
         </nav>
     </header>

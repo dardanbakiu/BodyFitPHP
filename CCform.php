@@ -163,9 +163,10 @@ $viti = $_POST['viti'];
                         {
                           $username = $_COOKIE['logged'];
 
-                          session_start();
+                          
                           $_SESSION['paid'] = $username;
                           $sessionn = $_SESSION['paid'];
+                          session_start();
                         }
 
 

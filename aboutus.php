@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html manifest="aboutus.appcache">
 <head>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -60,9 +60,13 @@
 <body >
     <header style="z-index: 1;">
         <hr id="vija">
+        <div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.3"></script>
+
+<div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-width="" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="false"></div>
         <div class="permbajtja">
           <!-- <img src="logo1.png" alt="Logoja" style="width:220px;height:90px;margin-left: 4%">  -->
-          <img  src="logo1.png" alt="Logoja" style="width:200px;height:70px; "> 
+          <img  src="liogo1.png" alt="Logoja" style="width:200px;height:70px; "> 
             <form class="searchbox">
                  <input type="text" placeholder="Search.." name="search">
                  <input type="submit"name="submit" class="searchbox" value="Search">
@@ -70,7 +74,7 @@
         </div>   
         <nav>
                 <ul>
-                        <div class="permbajtja">
+                    <div class="permbajtja">
                     <li><a href="HOMEPAGE.php">HOMEPAGE</a></li>
                     <li><a href="aboutus.php">ABOUT US</a></li>
                     <?php
@@ -88,13 +92,18 @@
                     
                         echo '<li id="signUP" class="active"><a href="SIGN-UP.php" >SIGN UP | LOG IN</a></li>';
                       }
-                      if (isset($_COOKIE['logged']))
+
+                    if (isset($_COOKIE['logged']))
                       {
                     
-                        echo '<li class="active"><a href="membersdb.php">PROFILE</a></li>';
+                        echo '<li style="background-color:MediumSeaGreen;"><a href="logout.php">LOGOUT</a></li> ';
                       }
-                    ?>                        
+
+                    
+                    ?>
+                   
                 </div>
+               
                         
                         
                 </ul>   

@@ -26,6 +26,10 @@
 <body >
     <header style="z-index: 99;">
         <hr id="vija">
+        <div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.3"></script>
+
+<div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-width="" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="false"></div>
         <div class="permbajtja">
           <img src="logo1.png" alt="Logoja" style="width:200px;height:70px; "> 
             <form class="searchbox">
@@ -58,6 +62,14 @@
                     
                         echo '<li class="active"><a href="membersdb.php">PROFILE</a></li>';
                       }
+                    ?>   
+                     <?php
+                    if (isset($_COOKIE['logged']))
+                      {
+                    
+                        echo '<li style="background-color:MediumSeaGreen;"><a href="logout.php">LOGOUT</a></li> ';
+                      }
+                    
                     ?>   
                     
 
@@ -356,14 +368,14 @@
                 success: function(response)
                 {
                     
-                    if (response == "1")
-                    {
+                    //if (response == "0")
+                  //  {
                         $("#response_text").text("Keni shtuar me sukses!");
-                    }
-                    else
-                    {
-                        $("#response_text").text("Keni shtuar pa sukses");
-                    }
+                    // }
+                    // else
+                    // {
+                    //     $("#response_text").text("Keni shtuar pa sukses");
+                    // }
                 }
             });
         });
