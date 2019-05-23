@@ -304,12 +304,7 @@ $viti = $_POST['viti'];
                         {
                          
                             $_SESSION['buy_session'] = $_COOKIE['logged'] ;
-                            echo "
-                            <script>
-                            alert('mut');
-                            </script>
-
-                            ";
+                            
                         }
 
 
