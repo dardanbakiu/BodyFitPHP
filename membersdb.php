@@ -1,3 +1,5 @@
+
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html >
 <head>
@@ -32,15 +34,22 @@
                 <ul>
                     <div class="permbajtja">
                     <li><a href="HOMEPAGE.php">HOMEPAGE</a></li>
-                    <li><a href="aboutus.php">ABOUT US</a></li>
                     <?php
-                    if (isset($_COOKIE['logged']))
+                    if (isset($_COOKIE['logged']) && !isset($_SESSION["buy_session"]))
                       {
                     
                         echo '<li><a href="OnlineTraining.php">ONLINE TRAINING</a></li> ';
                       }
                     
                     ?>
+                    <?php
+                    if (isset($_SESSION["buy_session"]))
+                      {
+                    
+                        echo '<li style="background-color:MediumSeaGreen;"><a href="paid.php">TRAININGS</a></li> ';
+                      }
+                    
+                    ?>  
                     <li><a href="team.php">TEAM</a></li>
                     <?php
                       if (!isset($_COOKIE['logged']))
@@ -94,7 +103,7 @@
               ?><div id="all">
                 <?php
               
-              echo "<h1 style='text-align:center;' id='emriphp'> ".$name." ".$lastname."</h1>";
+              echo "<BR><BR><h1 style='text-align:center;' id='emriphp'> ".$name." ".$lastname."</h1>";
               echo "<h2 style='text-align:center;' id='emailphp'>".$email."</h2>";
               echo "<h3 style='text-align:center;' id='usernphp'> @".$username."</h3>";
               echo "<h4 style='text-align:center;' id='cityphp'>  ".$city."</h4  >";

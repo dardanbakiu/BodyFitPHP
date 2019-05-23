@@ -1,8 +1,4 @@
-<?php session_start(); 
-    
-    echo $_SESSION['buy_session'];
-
-?>
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
     <head>
@@ -47,11 +43,12 @@
         
                 <header>
                         <hr id="vija">
-                        <div id="fb-root"></div>
+                        
+                        <div class="permbajtja">
+                            <div id="fb-root"></div>
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.3"></script>
 
 <div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-width="" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="false"></div>
-                        <div class="permbajtja">
                           <img src="logo1.png" alt="Logoja" style="width:200px;height:70px; "> 
                             <form class="searchbox">
                                  <input type="text" placeholder="Search.." name="search">
@@ -62,15 +59,22 @@
                                 <ul>
                          <div class="permbajtja">
                     <li><a href="HOMEPAGE.php">HOMEPAGE</a></li>
-                    <li><a href="aboutus.php">ABOUT US</a></li>
                     <?php
-                    if (isset($_COOKIE['logged']))
+                    if (isset($_COOKIE['logged']) && !isset($_SESSION["buy_session"]))
                       {
                     
                         echo '<li><a href="OnlineTraining.php">ONLINE TRAINING</a></li> ';
                       }
                     
                     ?>
+                    <?php
+                    if (isset($_SESSION["buy_session"]))
+                      {
+                    
+                        echo '<li style="background-color:MediumSeaGreen;"><a href="paid.php">TRAININGS</a></li> ';
+                      }
+                    
+                    ?>  
                     <li><a href="team.php">TEAM</a></li>
                     <?php
                       if (!isset($_COOKIE['logged']))
@@ -244,12 +248,14 @@
                         <img src="mastercard.jpg" id="mastercard">
                     </div>
                     <div  class="form-group" id="pay-now">
-                        <p><button type="Submit" name="paid" style="padding-left: 40%; padding-right:40%" id="butoni" onclick="Count()" type="button">  
+                        <p><button id="buy-now" type="Submit" name="paid" style="padding-left: 40%; padding-right:40%" id="butoni" onclick="Count()" type="button">  
                             <svg height="15" width="80">
                               <text x="0" y="15" fill="#165D34">Submit</text>
                               Sorry, your browser does not support inline SVG.
                             </svg>   
                         </button>
+
+                        
                     </p>
                 <div id="result"> </div>
                     </div>
@@ -305,6 +311,14 @@ $viti = $_POST['viti'];
                          
                             $_SESSION['buy_session'] = $_COOKIE['logged'] ;
                             
+                            echo "
+
+                            <script>
+                              location.replace('http://localhost/ushtrime/bodyfitPHP/paid.php');
+                            
+                              </script>
+                            ";
+
                         }
 
 
