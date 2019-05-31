@@ -190,45 +190,50 @@
 // lidhja me db
 include 'lidhjadb.php';
 
-if(mysqli_connect_error()) {
+if(mysqli_connect_error() && false) {
   echo "error";
 }
 
 else {
+  // i kena rujt nvariabla inputat
 
+  if (isset($_POST['usernameRegister']) && isset($_POST['register_name_input']) && isset($_POST['register_lastname_input']) && isset($_POST['register_city_input']) && isset($_POST['emailRegister']) && isset($_POST['passwordRegister']))
+  {
 
-// i kena rujt nvariabla inputat
+    $usernameRegister = ($_POST['usernameRegister']);
+    $emailRegister = $_POST['emailRegister'];
+    $passwordRegister = $_POST['passwordRegister'];
+    $register_name_input = $_POST['register_name_input'];
+    $register_lastname_input = $_POST['register_lastname_input'];
+    $register_city_input = $_POST['register_city_input'];
 
-if (isset($_POST['usernameRegister']) && isset($_POST['register_name_input']) && isset($_POST['register_lastname_input']) && isset($_POST['register_city_input']) && isset($_POST['emailRegister']) && isset($_POST['passwordRegister']))
-{
+    if (!empty($usernameRegister) || !empty($emailRegister) || !empty($emailRegister) || !empty($passwordRegister)|| !empty($register_name_input)|| !empty($register_lastname_input)|| !empty($register_city_input)) 
+      {  
+          $regex = '/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/'; 
+          $emailValid = (preg_match($regex, $emailRegister));
+		  
 
-$usernameRegister = ($_POST['usernameRegister']);
-$emailRegister = $_POST['emailRegister'];
-$passwordRegister = $_POST['passwordRegister'];
-$register_name_input = $_POST['register_name_input'];
-$register_lastname_input = $_POST['register_lastname_input'];
-$register_city_input = $_POST['register_city_input'];
+          if(!$emailValid){
+              echo "Email not valid";
+          }else{
+              //Prepare statement
+             $stmt = $conn->prepare("insert into register(name,lastname,city,email,password,username) values('".$firstName."','".$register_lastname_input."', '".$register_city_input."', '".$emailRegister."','".$passwordRegister."','".$usernameRegister."');");
+             $stmt->execute();
+             $rnum = $stmt->num_rows;
 
+             echo 
+             "<script>
+                document.getElementById('register_alert').innerHTML = 'Jeni regjistruar me sukses!';
+                document.getElementById('register_alert').style.display = 'block';
+             </script>"; 
+          }
+      }
 
-  if (!empty($usernameRegister) || !empty($emailRegister) || !empty($emailRegister) || !empty($passwordRegister)|| !empty($register_name_input)|| !empty($register_lastname_input)|| !empty($register_city_input)) 
-    {  //Prepare statement
-         $stmt = $conn->prepare("insert into register(name,lastname,city,email,password,username) values('".$register_name_input."','".$register_lastname_input."', '".$register_city_input."', '".$emailRegister."','".$passwordRegister."','".$usernameRegister."');");
-         $stmt->execute();
-         $rnum = $stmt->num_rows;
-
-         echo 
-         "<script>
-            document.getElementById('register_alert').innerHTML = 'Jeni regjistruar me sukses!';
-            document.getElementById('register_alert').style.display = 'block';
-         </script>"; 
-        
-    }
-
-  else  
-    {
-      echo "Te gjitha kolonat duhet te plotesohen";
-    }
-}
+    else  
+      {
+        echo "Te gjitha kolonat duhet te plotesohen";
+      }
+  }
 }
 ?>
            
