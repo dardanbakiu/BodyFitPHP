@@ -292,7 +292,7 @@ $register_city_input = $_POST['register_city_input'];
         </ul>
     </section>
      <section id="copyright">
-        Copyright©2018,BodyFit,Inc.Online and Face to Face training,Inc. <a href="privacypolicy.html"> Privacy Policy</a><a onclick="openWin()"href="#">Play a game</a>
+        Copyright©2018,BodyFit,Inc.Online and Face to Face training,Inc. <a href="privacypolicy.html"> Privacy Policy</a><a onclick="openWin()"href="index.php">Play a game</a>
      </section> 
 </footer>
     
