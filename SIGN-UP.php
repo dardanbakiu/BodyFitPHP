@@ -18,6 +18,7 @@
                 {
                   $usernameLogin = $_POST['usernameLogin'];
                   $passwordLogin = $_POST['passwordLogin'];
+			
 
                 if  (!empty($usernameLogin) || !empty($passwordLogin)) 
                   {
