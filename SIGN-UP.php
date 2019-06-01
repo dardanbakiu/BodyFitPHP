@@ -18,7 +18,6 @@
                 {
                   $usernameLogin = $_POST['usernameLogin'];
                   $passwordLogin = $_POST['passwordLogin'];
-			
 
                 if  (!empty($usernameLogin) || !empty($passwordLogin)) 
                   {
@@ -212,7 +211,10 @@ else {
       {  
           $regex = '/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/'; 
           $emailValid = (preg_match($regex, $emailRegister));
-		  
+
+          $usernameRegister = preg_replace("([ ]+)", "-", $usernameRegister);
+          $nameArr = preg_split ("/\ /", $register_name_input); 
+          $firstName = $nameArr[0];
 
           if(!$emailValid){
               echo "Email not valid";
