@@ -160,7 +160,7 @@
                         <td>9</td>
                         <td>Karl</td>
                         <td>Greene</td>
-                        <td>Fitness Instructor</td>
+                        <td>Meditation Instructor</td>
                     </tr>
                 </tbody>
             </table>
@@ -341,7 +341,7 @@
                                     Name:<br>
                                        <h2>KARL GREENE</h2>
                                     Occupation:<br>
-                                       <b><p>Fitness Instructor</p></b>
+                                       <b><p>Meditation Instructor</p></b>
                                     Contact:<br><br>
                                     <a href="tel:044525252" class="telephone">044525252</a>
                                     <br><br>
@@ -395,19 +395,42 @@
 
     echo "Differentiate out trainers better! <br>";
 
-    function trainersNames($emri, $mbiemri)
+    echo "Our fitness Instructors are:";
+    function Instruktoret($emri, $mbiemri)
     {
         echo "$emri $mbiemri is a Fitnes Instructor!<br>";
 
     }
 
-    trainersNames("Bob", "Harper");
-    trainersNames("Tony", "Horton");
-    trainersNames("Gunnar", "Peterson");
-    trainersNames("John", "Baker");
-    trainersNames("Karl", "Greene");
+    Instruktoret("Bob", "Harper");
+    Instruktoret("Tony", "Horton");
+    Instruktoret("Gunnar", "Peterson");
+    Instruktoret("John", "Baker");
 
     echo "<br>";
+    echo "Our Yoga Teachers are:";
+    function yogaTeachers($emri, $mbiemri)
+    {
+        echo "$emri $mbiemri is a Yoga Teacher! <br>";
+    }
+
+    yogaTeachers("Anna", "Smith");
+    yogaTeachers("Nina", "Packer");
+    yogaTeachers("Rachel","Geller");
+
+    echo "<br";
+
+    echo "Our Meditation Instructors are: ";
+    function meditationInstructors($emri, $mbiemri)
+    {
+        echo "$emri $mbiemri is a Meditation Instructor! <br>";
+    }
+
+    meditationInstructors("Jessica", "Alba");
+    meditationInstructors("Karl", "Greene");
+
+    echo "<br>";
+
 ?>
      <footer>
         <section id="footerimajtas">
