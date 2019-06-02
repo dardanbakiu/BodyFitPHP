@@ -160,7 +160,7 @@
                         <td>9</td>
                         <td>Karl</td>
                         <td>Greene</td>
-                        <td>Fitness Instructor, Runner</td>
+                        <td>Fitness Instructor</td>
                     </tr>
                 </tbody>
             </table>
@@ -261,7 +261,7 @@
                                     Name:<br>
                                        <h2>JON DOE</h2>
                                     Occupation:<br>
-                                       <b><p>Body Builder, Weightlifing</p></b>
+                                       <b><p>Fitnes Instructor</p></b>
                                     Contact:<br><br>
                                     <a href="tel:044444444" class="telephone">044444444</a>
                                     <br><br>
@@ -281,7 +281,7 @@
                                     Name:<br>
                                        <h2>NINA PACKER</h2>
                                     Occupation:<br>
-                                       <b><p>Fitness Instructor</p></b>
+                                       <b><p>Yoga Teacher</p></b>
                                     Contact:<br><br>
                                     <a href="tel:044775577" class="telephone">044775577</a>
                                     <br><br>
@@ -301,7 +301,7 @@
                                     Name:<br>
                                        <h2>RACHEL GELLER</h2>
                                     Occupation:<br>
-                                       <b><p>Athletic</p></b>
+                                       <b><p>Yoga Teacher</p></b>
                                     Contact:<br><br>
                                     <a href="tel:044333222" class="telephone">044333222</a>
                                     <br><br>
@@ -341,7 +341,7 @@
                                     Name:<br>
                                        <h2>KARL GREENE</h2>
                                     Occupation:<br>
-                                       <b><p>Fitness Instructor, Runner</p></b>
+                                       <b><p>Fitness Instructor</p></b>
                                     Contact:<br><br>
                                     <a href="tel:044525252" class="telephone">044525252</a>
                                     <br><br>
@@ -388,8 +388,27 @@
                 }
             });
         });
+
     </script>
 
+    <?php
+
+    echo "Differentiate out trainers better! <br>";
+
+    function trainersNames($emri, $mbiemri)
+    {
+        echo "$emri $mbiemri is a Fitnes Instructor!<br>";
+
+    }
+
+    trainersNames("Bob", "Harper");
+    trainersNames("Tony", "Horton");
+    trainersNames("Gunnar", "Peterson");
+    trainersNames("John", "Baker");
+    trainersNames("Karl", "Greene");
+
+    echo "<br>";
+?>
      <footer>
         <section id="footerimajtas">
             <h4>Address</h4>
