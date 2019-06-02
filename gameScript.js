@@ -3,6 +3,6 @@
 var myWindow;
 
 function openWin() {
-  myWindow = window.open("loja.php", "LojaPHP", "width=600, height=430");
+  myWindow = window.open("game.php", "LojaPHP", "width=900, height=730");
 }
 

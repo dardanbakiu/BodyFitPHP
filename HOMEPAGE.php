@@ -372,7 +372,7 @@
             </ul>
         </section>
          <section id="copyright">
-            Copyright©2018,BodyFit,Inc.Online and Face to Face training,Inc. <a href="privacypolicy.html"> Privacy Policy</a><a onclick="openWin()"href="game.php">Play a game</a>
+            Copyright©2018,BodyFit,Inc.Online and Face to Face training,Inc. <a href="privacypolicy.html"> Privacy Policy</a><a onclick="openWin()">Play a game</a>
          </section> 
     </footer>
     
