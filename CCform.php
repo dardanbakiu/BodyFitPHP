@@ -180,6 +180,8 @@ $viti = $_POST['viti'];
                           document.getElementById('register_alert').style.display = 'block';
                        </script>"; 
                   }
+        
+                  
         // perfundon new
     }
 
