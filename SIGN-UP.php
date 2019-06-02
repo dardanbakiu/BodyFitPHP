@@ -23,10 +23,13 @@
                   {
                       
                   // i kena rujt nvariabla inputat
-                    
+                    $_username=mysqli_real_escape_string($conn,$usernameLogin);
+                    $_password=mysqli_real_escape_string($conn,$passwordLogin);
 
-                    $selectUsername = $conn->query("select username from register where username ='".$usernameLogin."';");
-                    $selectPassword = $conn->query("select password from register where password ='".$passwordLogin."';");
+
+                    $selectUsername = $conn->query("select username from register where username ='".$_username."';");
+                    $selectPassword = $conn->query("select password from register where password ='".$_password."';");
+
 
 
                   if  (( $selectUsername->num_rows > 0) &&( $selectPassword->num_rows > 0)) 
