@@ -130,7 +130,7 @@
                         <td>4</td>
                         <td>Jessica</td>
                         <td>Alba</td>
-                        <td>Meditation Instructor</td>
+                        <td>Yoga Teacher </td>
                     </tr>
                     <tr>
                         <td>5</td>
@@ -160,7 +160,7 @@
                         <td>9</td>
                         <td>Karl</td>
                         <td>Greene</td>
-                        <td>Meditation Instructor</td>
+                        <td>Fitness Instructor</td>
                     </tr>
                 </tbody>
             </table>
@@ -241,7 +241,7 @@
                                     Name:<br>
                                        <h2>JESSICA ALBA</h2>
                                     Occupation:<br>
-                                       <b><p>Meditation Instructor</p></b>
+                                       <b><p>Yoga Teacher </p></b>
                                     Contact:<br><br>
                                     <a href="tel:044454545" class="telephone">044454545</a>
                                     <br><br>
@@ -341,7 +341,7 @@
                                     Name:<br>
                                        <h2>KARL GREENE</h2>
                                     Occupation:<br>
-                                       <b><p>Meditation Instructor</p></b>
+                                       <b><p>Fitness Instructor</p></b>
                                     Contact:<br><br>
                                     <a href="tel:044525252" class="telephone">044525252</a>
                                     <br><br>
@@ -352,7 +352,46 @@
                 </li>
             </ul>
         </section>
-     <div id="join" style="text-align: center;">
+
+        <hr>
+    <div id="trainersphp" style="text-align: center;">   
+    
+    <h2>DIFFERENTIATE OUR TRAINERS BETTER! <br></h2>
+
+    <h4>Our fitness Instructors are: <br><h4>
+
+    <?php
+    function Instruktoret($emri, $mbiemri)
+    {
+        echo "$emri $mbiemri is a Fitnes Instructor!<br>";
+
+    }
+
+    Instruktoret("Bob", "Harper");
+    Instruktoret("Tony", "Horton");
+    Instruktoret("Gunnar", "Peterson");
+    Instruktoret("John", "Baker");
+    Instruktoret("Karl", "Greene");
+    ?>
+    
+    <h4>Our Yoga Teachers are: <br><h4>
+    
+    <?php
+    function yogaTeachers($emri, $mbiemri)
+    {
+        echo "$emri $mbiemri is a Yoga Teacher! <br>";
+    }
+
+    yogaTeachers("Anna", "Smith");
+    yogaTeachers("Nina", "Packer");
+    yogaTeachers("Rachel","Geller");
+    yogaTeachers("Jessica", "Alba");
+
+    ?>
+    </div>
+    <br><br>
+    <hr>
+    <div id="join" style="text-align: center;">
         <h3>Do you want to join our team?!</h3>
         <label> Full Name :</label> <input type="text" id="emrii" style="margin: 1%"><br>
         <label> Email :</label><input type="Email" id="email" style="margin:1%;"> <br>
@@ -391,47 +430,8 @@
 
     </script>
 
-    <?php
+    
 
-    echo "Differentiate out trainers better! <br>";
-
-    echo "Our fitness Instructors are:";
-    function Instruktoret($emri, $mbiemri)
-    {
-        echo "$emri $mbiemri is a Fitnes Instructor!<br>";
-
-    }
-
-    Instruktoret("Bob", "Harper");
-    Instruktoret("Tony", "Horton");
-    Instruktoret("Gunnar", "Peterson");
-    Instruktoret("John", "Baker");
-
-    echo "<br>";
-    echo "Our Yoga Teachers are:";
-    function yogaTeachers($emri, $mbiemri)
-    {
-        echo "$emri $mbiemri is a Yoga Teacher! <br>";
-    }
-
-    yogaTeachers("Anna", "Smith");
-    yogaTeachers("Nina", "Packer");
-    yogaTeachers("Rachel","Geller");
-
-    echo "<br";
-
-    echo "Our Meditation Instructors are: ";
-    function meditationInstructors($emri, $mbiemri)
-    {
-        echo "$emri $mbiemri is a Meditation Instructor! <br>";
-    }
-
-    meditationInstructors("Jessica", "Alba");
-    meditationInstructors("Karl", "Greene");
-
-    echo "<br>";
-
-?>
      <footer>
         <section id="footerimajtas">
             <h4>Address</h4>
